@@ -1,22 +1,50 @@
+@import '../../styles/var';
 
-[class^="icon-"], [class*=" icon-"] {
-    /* use !important to prevent issues with browser extensions that change fonts */
-    font-family: 'icomoon' !important;
-    speak: never;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-  
-    /* Better Font Rendering =========== */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+nav.navbar {
+  .nav-links {
+    flex: 1;
   }
-  
-  .icon-person_icon:before {
-    content: "\e901";
+}
+
+.logo {
+  width: 140px;
+}
+
+.nav-link {
+  padding-left : .5rem;
+  padding-right: .5rem;
+}
+
+.icon {
+  font-size: 2rem;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family   : 'icomoon' !important;
+  speak         : never;
+  font-style    : normal;
+  font-weight   : normal;
+  font-variant  : normal;
+  text-transform: none;
+  line-height   : 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing : antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-person_icon:before {
+  content: "\e901";
+}
+
+.icon-heart_icon:before {
+  content: "\e900";
+}
+
+@media screen and (max-width:840px) and(min-width:768px) {
+  .nav-link {
+    font-size: .8rem;
   }
-  .icon-heart_icon:before {
-    content: "\e900";
-  }
+}
