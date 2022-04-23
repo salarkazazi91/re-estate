@@ -16,7 +16,7 @@ nav.navbar {
 }
 
 .icon {
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
 [class^="icon-"],
@@ -41,6 +41,26 @@ nav.navbar {
 
 .icon-heart_icon:before {
   content: "\e900";
+}
+
+.heart-icon {
+  position: relative;
+}
+
+.heart-icon-number {
+  position: absolute;
+  bottom: 7px;
+  right: 0%;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #e07272;
+  font-size: .725rem;
+  color: white;
+  padding: 2px 2px 1px 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media screen and (max-width:840px) and(min-width:768px) {
