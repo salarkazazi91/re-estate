@@ -1,7 +1,35 @@
-:host{
-    display: block; 
+:host {
+    display: block;
 
-    section.main{
-position: relative;
+    section.main {
+        position: relative;
+
+        .main-cover-img {
+            position  : absolute;
+            top       : 0%;
+            left      : 0%;
+            right     : 0%;
+            bottom    : 0%;
+            z-index   : -1;
+            object-fit: cover;
+        }
+
+        .section-search-box {
+            position: relative;
+            z-index : 1;
+
+            .main-btns {
+                a {
+                    width: 7rem;
+                    text-align: center;
+                }
+            }
+            .search-box {
+
+                background-color: rgb(37, 35, 35);
+
+            }
+        }
     }
 }
+ 
