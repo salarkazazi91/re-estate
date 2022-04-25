@@ -7,9 +7,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  // VARS
+  tags = [
+    'تهران',
+    'تهران',
+    'تهران', 
+  ]
+
+
+  // FUNCTIONS
+
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+
+  removeTag(tag: string) {
+     this.tags.splice(this.tags.indexOf(tag), 1)
   }
 
 }

@@ -6,38 +6,54 @@
 @import '../styles/var';
 
 // LAYOUT ELEMENTS--------------------------
-*{
+* {
     box-sizing: border-box;
 }
 
-body{
-    font-family: IRANSansWebNum,sans-serif;
-    direction: rtl;
-    padding: 0%!important; 
+body {
+    font-family: IRANSansWebNum, sans-serif;
+    direction  : rtl;
+    padding    : 0% !important;
 }
 
-li{
-    list-style: none; 
+li {
+    list-style: none;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-img{
-    width: 100%;
+img {
+    width : 100%;
     height: auto;
 }
+
 // END LAYOUT ELEMENTS --------------------------
 
 // COLORS--------------------------
-.text-gray{
-    color: $clr-nav-link!important;
+.text-gray {
+    color: $clr-nav-link !important;
+}
+
+.bg-cyan {
+    background-color: $clr-cyan;
+}
+.bg-light-cyan {
+    background-color: 
+    $clr-light-cyan;
+}
+.border-oval{
+    border-radius: 10px;
+}
+.cursor-pointer{
+    cursor: pointer;
 }
 // END COLORS--------------------------
 
 // FONTS--------------------------
-.font-small{
-    font-size: .8rem!important;
+.font-small {
+    font-size: .8rem !important;
 }
+
 // END FONTS--------------------------
