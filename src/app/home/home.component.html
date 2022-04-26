@@ -5,134 +5,30 @@
 ../../assets/images/home-main-large.jpg 700w,
 ../../assets/images/home-main-xxlg.jpg 900w,
 ">
-    <div class="row">
-        <div class="section-search-box container-xl py-3 col-9 col-lg-7">
+        <div class="section-search-box container-xl py-3">
             <div class="main-btns m-3 d-flex justify-content-center align-items-center">
                 <a class="bg-white text-gray fw-bold py-2 px-4 mx-2 border rounded" href="#">خرید</a>
                 <a class="bg-dark text-white fw-bold py-2 px-4  mx-2 border rounded" href="#">رهن</a>
                 <a class="bg-dark text-white fw-bold py-2 px-4  mx-2 border rounded" href="#">اجاره</a>
             </div>
-            <div class="search-box p-3">
-                <div class="search-input">
-                    <div class="row">
-                        <div class="search-section col-12 d-flex flex-nowrap justify-content-between">
-                            <div class="search-box-row rounded py-1 px-2  bg-white w-100">
-                                <label class="font-small d-block me-2">استان، شهر یا محله</label>
-                                <div class="region-tags d-flex flex-wrap ">
-                                    <button class="bg-white text-gray font-small border-oval border border-dark">
-                                        افزودن +</button>
-                                    <div class="tags d-flex justify-content-between" *ngFor="let tag of tags">
-                                        <span
-                                            class="tag bg-light-cyan text-dark font-small cursor-pointer border-oval border border-dark px-2 m-1"
-                                            (click)="removeTag(tag)">
-                                            {{tag}} x</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="bg-cyan text-white me-1 px-3 py-2 rounded border-0">جستجو</button>
-                        </div>
-                        <div class="col-12">
-                            <div class="row  bg-white">
-                                <div class="search-box-row col-12 col-md-3 border">
-                                    <label class="font-small d-block p-3 cursor-pointer"
-                                        (click)="hideResidencePanel=!hideResidencePanel">نوع ملک</label>
-                                    <div class="residence-panel" [ngClass]="{'hide':hideResidencePanel}">
-                                        <div class="ordered-panel bg-white">
-
-                                            <div class="panel-option font-small px-3 py-1 rounded border "
-                                                *ngFor="let state of states">{{state}}
-                                            </div>
-
-                                            <div class="buttons">
-                                                <a href="#">پاک کردن</a>
-                                                <a href="#">بستن</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="search-box-row col-6 col-md-3 border">
-                                    <label  class="font-small d-block p-3 cursor-pointer" (click)="hideMeterPanel=!hideMeterPanel">متراژ</label>
-                                    <div class="row" [ngClass]="{'hide':hideMeterPanel}">
-                                        <div class="col-6">
-                                            <span>حداقل</span>
-                                            <input type="text">
-                                            <div>
-                                                <button>0</button>
-                                                <button>60 متر</button>
-                                                <button>70 متر</button>
-                                                <button>80 متر</button>
-                                                <button>90 متر</button>
-                                                <button>100 متر</button>
-                                                <button>110 متر</button>
-                                                <button>120 متر</button>
-                                                <button>130 متر</button>
-                                                <button>140 متر</button>
-                                                <button>150 متر</button>
-                                                <button>200 متر</button>
-                                                <button>300 متر</button>
-                                            </div>
-                                        </div>
-                                        <div class="col-6">
-                                            <span>حداکثر</span>
-                                            <input type="text">
-                                            <div>
-                                                <button>همه</button>
-                                                <button>60 متر</button>
-                                                <button>70 متر</button>
-                                                <button>80 متر</button>
-                                                <button>90 متر</button>
-                                                <button>100 متر</button>
-                                                <button>110 متر</button>
-                                                <button>120 متر</button>
-                                                <button>130 متر</button>
-                                                <button>140 متر</button>
-                                                <button>150 متر</button>
-                                                <button>200 متر</button>
-                                                <button>300 متر</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="search-box-row col-6 col-md-3 border">
-                                    <label  class="font-small d-block p-3 cursor-pointer" (click)="hidePricePanel=!hidePricePanel">قیمت</label>
-                                    <div class="row" [ngClass]="{'hide':hidePricePanel}">
-                                        <div class="col-6">
-                                            <span>حداقل</span>
-                                            <input type="text">
-                                            <div>
-                                                <button>0</button>
-                                                <button>200 میلیون تومان</button>
-                                                <button>300 میلیون تومان</button>
-                                                <button>400 میلیون تومان</button>
-                                                <button>500 میلیون تومان</button>
-                                                <button>600 میلیون تومان</button>
-                                                <button>700 میلیون تومان</button>
-                                                <button>800 میلیون تومان</button>
-                                                <button>900 میلیون تومان</button>
-                                            </div>
-                                        </div>
-                                        <div class="col-6">
-                                            <span>حداکثر</span>
-                                            <input type="text">
-                                            <div>
-                                                <button>همه</button>
-                                                <button>200 میلیون تومان</button>
-                                                <button>300 میلیون تومان</button>
-                                                <button>400 میلیون تومان</button>
-                                                <button>500 میلیون تومان</button>
-                                                <button>600 میلیون تومان</button>
-                                                <button>700 میلیون تومان</button>
-                                                <button>800 میلیون تومان</button>
-                                                <button>900 میلیون تومان</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+            <div class="search-panel">
+                <div class="row">
+                    <div class="col-9 bg-white"> 
+                        <label class="font-small d-block me-2">استان، شهر یا محله</label>
+                        <div class="region-tags d-flex flex-wrap ">
+                            <button class="bg-white text-gray font-small border-oval border border-dark">
+                                افزودن +</button>
+                            <div class="tags d-flex justify-content-between" *ngFor="let tag of tags">
+                                <span
+                                    class="tag bg-light-cyan text-dark font-small cursor-pointer border-oval border border-dark px-2 m-1"
+                                    (click)="removeTag(tag)">
+                                    {{tag}} x</span>
                             </div>
                         </div>
+                    </div>
+                    <div class="col-3"> <button class="bg-cyan text-white me-1 px-3 py-2 rounded border-0">جستجو</button>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 </section>
