@@ -49,11 +49,18 @@ img {
 .cursor-pointer{
     cursor: pointer;
 }
+
+.hide{
+    display: none;
+}
 // END COLORS--------------------------
 
 // FONTS--------------------------
 .font-small {
     font-size: .8rem !important;
+}
+.font-smaller {
+    font-size: .6rem !important;
 }
 
 // END FONTS--------------------------

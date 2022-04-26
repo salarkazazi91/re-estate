@@ -8,12 +8,16 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   // VARS
+  hideResidencePanel = true;
+  hidePricePanel = true;
+  hideMeterPanel = true;
+
   tags = [
     'تهران',
     'تهران',
-    'تهران', 
+    'تهران',
   ]
-
+  states = ['آپارتمان', 'ویلا و باغ', 'زمین و کلنگی', 'اداری', 'تجاری', 'مستغلات'];
 
   // FUNCTIONS
 
@@ -25,7 +29,7 @@ export class HomeComponent implements OnInit {
 
 
   removeTag(tag: string) {
-     this.tags.splice(this.tags.indexOf(tag), 1)
+    this.tags.splice(this.tags.indexOf(tag), 1)
   }
 
 }
