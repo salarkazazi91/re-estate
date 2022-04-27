@@ -17,23 +17,26 @@
                     <button class=" fw-bold mx-2 rounded" (click)="mainBtn='rent'"
                         [ngClass]="{'text-dark':mainBtn==='rent','bg-white':mainBtn==='rent'}" href="#">اجاره</button>
                 </div>
-                <div class="search-panel mt-4">
+                <div class="search-panel mt-4 p-3">
                     <div class="row">
-                        <div class="col-8 bg-white">
+                        <div class="col-8 col-lg-10 ps-0"> 
+                         <div class="bg-white">
                             <label class="font-small d-block me-2">استان، شهر یا محله</label>
-                            <div class="region-tags d-flex flex-wrap ">
-                                <button class="bg-white text-gray font-small border-oval border border-dark">
-                                    افزودن +</button>
-                                <div class="tags d-flex justify-content-between" *ngFor="let tag of tags">
-                                    <span
-                                        class="tag bg-light-cyan text-dark font-small cursor-pointer border-oval border border-dark px-2 m-1"
-                                        (click)="removeTag(tag)">
-                                        {{tag}} x</span>
-                                </div>
-                            </div>
+                             <div class="region-tags d-flex flex-wrap ">
+                                 <button class="bg-white text-gray font-small border-oval border border-dark">
+                                     افزودن +</button>
+                                 <div class="tags d-flex justify-content-between" *ngFor="let tag of tags">
+                                     <span
+                                         class="tag bg-light-cyan text-dark font-small cursor-pointer border-oval border border-dark px-2 m-1"
+                                         (click)="removeTag(tag)">
+                                         {{tag}} x</span>
+                                 </div>
+                             </div>
+
+                         </div> 
                         </div>
-                        <div class="col-4"> <button
-                                class="search-btn bg-cyan text-white w-100 rounded border-0">جستجو</button>
+                        <div class="col-4 col-lg-2 pe-2"> <button 
+                                class="search-btn bg-cyan text-white rounded border-0">جستجو</button>
                         </div>
                     </div>
                 </div>
