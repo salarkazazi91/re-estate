@@ -5,32 +5,39 @@
 ../../assets/images/home-main-large.jpg 700w,
 ../../assets/images/home-main-xxlg.jpg 900w,
 ">
-        <div class="section-search-box container-xl py-5 row" >
-            <div class="main-btns col-12 mt-3 text-center"> 
-                <button 
-                class=" fw-bold mx-2 rounded "
-                 [ngClass]="{'text-dark':mainBtn==='buy','bg-white':mainBtn==='buy'}" (click)="mainBtn='buy'">خرید</button>
-                <button class=" fw-bold mx-2 rounded" (click)="mainBtn='rahn'" [ngClass]="{'text-dark':mainBtn==='rahn','bg-white':mainBtn==='rahn'}"  href="#">رهن</button>
-                <button class=" fw-bold mx-2 rounded" (click)="mainBtn='rent'" [ngClass]="{'text-dark':mainBtn==='rent','bg-white':mainBtn==='rent'}"  href="#">اجاره</button>
-            </div>
-            <div class="search-panel col-12 mt-4">
-                <div class="row">
-                    <div class="col-9 bg-white"> 
-                        <label class="font-small d-block me-2">استان، شهر یا محله</label>
-                        <div class="region-tags d-flex flex-wrap ">
-                            <button class="bg-white text-gray font-small border-oval border border-dark">
-                                افزودن +</button>
-                            <div class="tags d-flex justify-content-between" *ngFor="let tag of tags">
-                                <span
-                                    class="tag bg-light-cyan text-dark font-small cursor-pointer border-oval border border-dark px-2 m-1"
-                                    (click)="removeTag(tag)">
-                                    {{tag}} x</span>
+    <div class="section-search-box container-xl py-5 mx-auto ">
+        <div class="row">
+            <div class="col-lg-9 col-12 mx-auto">
+                <div class="main-btns mt-3 text-center">
+                    <button class=" fw-bold mx-2 rounded "
+                        [ngClass]="{'text-dark':mainBtn==='buy','bg-white':mainBtn==='buy'}"
+                        (click)="mainBtn='buy'">خرید</button>
+                    <button class=" fw-bold mx-2 rounded" (click)="mainBtn='rahn'"
+                        [ngClass]="{'text-dark':mainBtn==='rahn','bg-white':mainBtn==='rahn'}" href="#">رهن</button>
+                    <button class=" fw-bold mx-2 rounded" (click)="mainBtn='rent'"
+                        [ngClass]="{'text-dark':mainBtn==='rent','bg-white':mainBtn==='rent'}" href="#">اجاره</button>
+                </div>
+                <div class="search-panel mt-4">
+                    <div class="row">
+                        <div class="col-8 bg-white">
+                            <label class="font-small d-block me-2">استان، شهر یا محله</label>
+                            <div class="region-tags d-flex flex-wrap ">
+                                <button class="bg-white text-gray font-small border-oval border border-dark">
+                                    افزودن +</button>
+                                <div class="tags d-flex justify-content-between" *ngFor="let tag of tags">
+                                    <span
+                                        class="tag bg-light-cyan text-dark font-small cursor-pointer border-oval border border-dark px-2 m-1"
+                                        (click)="removeTag(tag)">
+                                        {{tag}} x</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-3"> <button class="bg-cyan text-white me-1 px-3 py-2 rounded border-0">جستجو</button>
+                        <div class="col-4"> <button
+                                class="search-btn bg-cyan text-white w-100 rounded border-0">جستجو</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 </section>
