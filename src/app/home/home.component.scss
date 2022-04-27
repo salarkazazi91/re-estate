@@ -69,12 +69,19 @@
                         top: 57px;
                         display: grid;
                         grid-template-columns: repeat(2, 1fr);
-                        gap: 1rem;
+                        gap: .5rem;
+                        padding: 1rem;
 
                         .context-tag {
-                            padding: .5rem 1rem;
-                            border: 1px solid white;
+                            border: 1px solid rgb(214, 209, 209);
                             background-color: white;
+                            border-radius:2px;
+                            padding: .2rem 1rem;
+                            font-size: .75rem;
+                        }
+
+                        .context-tag:hover {
+                            background-color: rgb(182, 187, 185);
                         }
                     }
 
