@@ -36,29 +36,37 @@ img {
     color: $clr-nav-link !important;
 }
 
+.bg-gray {
+    background-color:$clr-dark-gray !important;
+}
+
 .bg-cyan {
     background-color: $clr-cyan;
 }
+
 .bg-light-cyan {
-    background-color: 
-    $clr-light-cyan;
+    background-color: $clr-light-cyan;
 }
-.border-oval{
+
+.border-oval {
     border-radius: 10px;
 }
-.cursor-pointer{
+
+.cursor-pointer {
     cursor: pointer;
 }
 
-.hide{
+.hide {
     display: none;
 }
+
 // END COLORS--------------------------
 
 // FONTS--------------------------
 .font-small {
     font-size: .8rem !important;
 }
+
 .font-smaller {
     font-size: .6rem !important;
 }

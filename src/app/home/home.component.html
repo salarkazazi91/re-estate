@@ -5,13 +5,15 @@
 ../../assets/images/home-main-large.jpg 700w,
 ../../assets/images/home-main-xxlg.jpg 900w,
 ">
-        <div class="section-search-box container-xl py-3">
-            <div class="main-btns m-3 d-flex justify-content-center align-items-center">
-                <a class="bg-white text-gray fw-bold py-2 px-4 mx-2 border rounded" href="#">خرید</a>
-                <a class="bg-dark text-white fw-bold py-2 px-4  mx-2 border rounded" href="#">رهن</a>
-                <a class="bg-dark text-white fw-bold py-2 px-4  mx-2 border rounded" href="#">اجاره</a>
+        <div class="section-search-box container-xl py-5 row" >
+            <div class="main-btns col-12 mt-3 text-center"> 
+                <button 
+                class=" fw-bold mx-2 rounded "
+                 [ngClass]="{'text-dark':mainBtn==='buy','bg-white':mainBtn==='buy'}" (click)="mainBtn='buy'">خرید</button>
+                <button class=" fw-bold mx-2 rounded" (click)="mainBtn='rahn'" [ngClass]="{'text-dark':mainBtn==='rahn','bg-white':mainBtn==='rahn'}"  href="#">رهن</button>
+                <button class=" fw-bold mx-2 rounded" (click)="mainBtn='rent'" [ngClass]="{'text-dark':mainBtn==='rent','bg-white':mainBtn==='rent'}"  href="#">اجاره</button>
             </div>
-            <div class="search-panel">
+            <div class="search-panel col-12 mt-4">
                 <div class="row">
                     <div class="col-9 bg-white"> 
                         <label class="font-small d-block me-2">استان، شهر یا محله</label>

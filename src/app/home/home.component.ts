@@ -12,6 +12,8 @@ export class HomeComponent implements OnInit {
   hidePricePanel = true;
   hideMeterPanel = true;
 
+  mainBtn='buy';
+
   tags = [
     'تهران',
     'تهران',
