@@ -12,7 +12,10 @@ export class HomeComponent implements OnInit {
   hidePricePanel = true;
   hideMeterPanel = true;
 
-  mainBtn='buy';
+  mainBtn = 'buy';
+
+  openSearchControl = '';
+
 
   tags = [
     'تهران',
@@ -32,6 +35,10 @@ export class HomeComponent implements OnInit {
 
   removeTag(tag: string) {
     this.tags.splice(this.tags.indexOf(tag), 1)
+  }
+
+  searchContollClicked(control:string) {
+    this.openSearchControl = this.openSearchControl == control ? '' : control;
   }
 
 }

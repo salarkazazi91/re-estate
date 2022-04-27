@@ -19,29 +19,33 @@
                 </div>
                 <div class="search-panel mt-4 p-3">
                     <div class="row">
-                        <div class="col-8 col-lg-10 ps-0"> 
-                         <div class="bg-white px-2 py-1 rounded border">
-                            <label class="font-small d-block me-2">استان، شهر یا محله</label>
-                             <div class="region-tags d-flex flex-wrap ">
-                                 <button class="add bg-white text-gray border-oval border border-dark">
-                                     افزودن +</button>
-                                 <div class="tags d-flex justify-content-between" *ngFor="let tag of tags">
-                                     <span
-                                         class="tag bg-light-cyan text-dark font-small cursor-pointer border-oval border border-dark px-2 m-1"
-                                         (click)="removeTag(tag)">
-                                         {{tag}} x</span>
-                                 </div>
-                             </div>
+                        <div class="col-8 col-lg-10 ps-0">
+                            <div class="bg-white px-2 py-1 rounded border">
+                                <label class="font-small d-block me-2">استان، شهر یا محله</label>
+                                <div class="region-tags d-flex flex-wrap ">
+                                    <button class="add bg-white text-gray border-oval border border-dark">
+                                        افزودن +</button>
+                                    <div class="tags d-flex justify-content-between" *ngFor="let tag of tags">
+                                        <span
+                                            class="tag bg-light-cyan text-dark font-small cursor-pointer border-oval border border-dark px-2 m-1"
+                                            (click)="removeTag(tag)">
+                                            {{tag}} x</span>
+                                    </div>
+                                </div>
 
-                         </div> 
+                            </div>
                         </div>
-                        <div class="col-4 col-lg-2 pe-2 rounded"> <button 
+                        <div class="col-4 col-lg-2 pe-2 rounded"> <button
                                 class="search-btn bg-cyan text-white rounded border-0">جستجو</button>
                         </div>
-                        <div class="col-12 col-md-4 border">
-                            <div class="search-control bg-white">نوع ملک</div>
-                            <div class="search-control bg-white">
-                                <button class="searchcontrol_item__9okNF ">آپارتمان</button><button class="searchcontrol_item__9okNF ">ویلا و باغ</button><button class="searchcontrol_item__9okNF ">زمین و کلنگی</button><button class="searchcontrol_item__9okNF ">اداری</button><button class="searchcontrol_item__9okNF ">تجاری</button>
+                        <div class="search-item col-12 col-md-4 " (click)="searchContollClicked('melk')">
+                            <div class="item-header bg-white">نوع ملک</div>
+                            <div class="item-context bg-white border rounded" [ngClass]="{'hide':openSearchControl!='melk'}">
+                                <button class="context-tag">آپارتمان</button>
+                                <button class="context-tag">ویلا و باغ</button>
+                                <button class="context-tag">زمین و کلنگی</button>
+                                <button class="context-tag">اداری</button>
+                                <button class="context-tag">تجاری</button>
                             </div>
                         </div>
                         <div class="col-6 col-md-4 border">متراژ</div>
