@@ -23,12 +23,19 @@ export class HomeComponent implements OnInit {
     'تهران',
   ]
   states = ['آپارتمان', 'ویلا و باغ', 'زمین و کلنگی', 'اداری', 'تجاری', 'مستغلات'];
-
+selectedStates={
+  apartment:false,
+  field:false,
+  land:false,
+  mostaghelat:false,
+  organization:false,
+  commercial:false, 
+}
   @ViewChild('melkElement') melkElement!: ElementRef;
   @ViewChild('melkBtn') melkBtn!: ElementRef;
 
   // FUNCTIONS
-
+  doSomething(){console.log(this.selectedStates)}
 
   constructor(private renderer: Renderer2) {
     this.renderer.listen('window', 'click', (e: Event) => {
