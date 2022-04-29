@@ -43,22 +43,40 @@
                                 (click)="searchContollClicked('melk')" #melkBtn>نوع ملک</div>
                             <div class="item-context bg-white border rounded" (click)="doSomething()"
                                 [ngClass]="{'hide':openSearchControl!='melk'}" #melkElement>
-                                <input type="checkbox" name="apartment" id="apartment" [(ngModel)]="selectedStates.apartment">
+                                <input type="checkbox" name="apartment" id="apartment"
+                                    [(ngModel)]="selectedStates.apartment">
                                 <label class="context-tag" for="apartment">آپارتمان</label>
-                                <input  [(ngModel)]="selectedStates.field" type="checkbox" name="field" id="field">
+                                <input [(ngModel)]="selectedStates.field" type="checkbox" name="field" id="field">
                                 <label class="context-tag" for="field">ویلا و باغ</label>
-                                <input  [(ngModel)]="selectedStates.land" type="checkbox" name="land" id="land">
+                                <input [(ngModel)]="selectedStates.land" type="checkbox" name="land" id="land">
                                 <label class="context-tag" for="land">زمین و کلنگی</label>
-                                <input  [(ngModel)]="selectedStates.organization" type="checkbox" name="organization" id="organization">
+                                <input [(ngModel)]="selectedStates.organization" type="checkbox" name="organization"
+                                    id="organization">
                                 <label class="context-tag" for="organization">اداری</label>
-                                <input  [(ngModel)]="selectedStates.commercial" type="checkbox" name="commercial" id="commercial">
+                                <input [(ngModel)]="selectedStates.commercial" type="checkbox" name="commercial"
+                                    id="commercial">
                                 <label class="context-tag" for="commercial">تجاری</label>
-                                <input  [(ngModel)]="selectedStates.mostaghelat" type="checkbox" name="mostaghelat" id="mostaghelat">
+                                <input [(ngModel)]="selectedStates.mostaghelat" type="checkbox" name="mostaghelat"
+                                    id="mostaghelat">
                                 <label class="context-tag" for="mostaghelat">مستغلات</label>
                             </div>
                         </div>
-                        <div class="col-6 col-md-4 border">متراژ</div>
-                        <div class="col-6 col-md-4 border">قیمت</div>
+                        <div class="col-6 col-md-4 border">
+                            <div class="item-header bg-white rounded-bottom cursor-pointer"
+                                (click)="searchContollClicked('meter')" #meterBtn>متراژ</div>
+                            <div class="item-context bg-white border rounded" (click)="doSomething()"
+                                [ngClass]="{'hide':openSearchControl!='meter'}" #meterElement> 
+                                im some...
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4 border">
+                            <div class="item-header bg-white rounded-bottom  cursor-pointer"
+                                (click)="searchContollClicked('price')" #priceBtn>قیمت</div>
+                            <div class="item-context bg-white border rounded" (click)="doSomething()"
+                                [ngClass]="{'hide':openSearchControl!='price'}" #priceElement>
+                                im some ...2
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

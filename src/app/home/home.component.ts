@@ -8,10 +8,7 @@ import { timer } from 'rxjs';
 })
 export class HomeComponent implements OnInit {
 
-  // VARS
-  hideResidencePanel = true;
-  hidePricePanel = true;
-  hideMeterPanel = true;
+  // VARS 
 
   mainBtn = 'buy';
 
@@ -35,19 +32,31 @@ export class HomeComponent implements OnInit {
   @ViewChild('melkElement') melkElement!: ElementRef;
   @ViewChild('melkBtn') melkBtn!: ElementRef;
 
+  @ViewChild('meterElement') meterElement!: ElementRef;
+  @ViewChild('meterBtn') meterBtn!: ElementRef;
+
+  @ViewChild('priceElement') priceElement!: ElementRef;
+  @ViewChild('priceBtn') priceBtn!: ElementRef;
+
   // FUNCTIONS
   doSomething() {
 
     const source = timer(10);
-    const subscribe = source.subscribe(val => 
+    const subscribe = source.subscribe(val =>
       console.log(this.selectedStates));
 
   }
 
   constructor(private renderer: Renderer2) {
     this.renderer.listen('window', 'click', (e: Event) => {
-      if (e.target !== this.melkElement.nativeElement && e.target !== this.melkBtn.nativeElement
+      if (this.openSearchControl === 'melk' && e.target !== this.melkElement.nativeElement && e.target !== this.melkBtn.nativeElement
         && !Array.from(this.melkElement.nativeElement.children).find(x => x == e.target)) {
+        this.openSearchControl = '';
+      } if (this.openSearchControl === 'meter' && e.target !== this.meterElement.nativeElement && e.target !== this.meterBtn.nativeElement
+        && !Array.from(this.meterElement.nativeElement.children).find(x => x == e.target)) {
+        this.openSearchControl = '';
+      } if (this.openSearchControl === 'price' && e.target !== this.priceElement.nativeElement && e.target !== this.priceBtn.nativeElement
+        && !Array.from(this.priceElement.nativeElement.children).find(x => x == e.target)) {
         this.openSearchControl = '';
       }
     })
@@ -63,6 +72,7 @@ export class HomeComponent implements OnInit {
   }
 
   searchContollClicked(control: string) {
+
     this.openSearchControl = this.openSearchControl == control ? '' : control;
   }
 
