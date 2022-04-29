@@ -65,9 +65,43 @@
                             <div class="item-header bg-white rounded-bottom cursor-pointer"
                                 (click)="searchContollClicked('meter')" #meterBtn>متراژ</div>
                             <div class="item-context bg-white border rounded" (click)="doSomething()"
-                                [ngClass]="{'hide':openSearchControl!='meter'}" #meterElement> 
-                                im some...
+                                [ngClass]="{'hide':openSearchControl!='meter'}" #meterElement>
+                                <div class="meter-content row">
+                                    <div class="col-6">
+                                        <h6>حداقل</h6>
+                                        <input type="text" [(ngModel)]="leastMeter">
+                                        <button class="content-btn">0</button>
+                                        <button class="content-btn">60 متر</button>
+                                        <button class="content-btn">70 متر</button>
+                                        <button class="content-btn">80 متر</button>
+                                        <button class="content-btn">90 متر</button>
+                                        <button class="content-btn">100 متر</button>
+                                        <button class="content-btn">120 متر</button>
+                                        <button class="content-btn">140 متر</button>
+                                        <button class="content-btn">160 متر</button>
+                                        <button class="content-btn">180 متر</button>
+                                        <button class="content-btn">200 متر</button>
+                                        <button class="content-btn">300 متر</button>
+                                    </div>
+                                    <div class="col-6">
+                                        <h6>حداکثر</h6>
+                                        <input type="text" [(ngModel)]="leastMeter">
+                                        <button class="content-btn">همه</button>
+                                        <button class="content-btn">70 متر</button>
+                                        <button class="content-btn">80 متر</button>
+                                        <button class="content-btn">90 متر</button>
+                                        <button class="content-btn">100 متر</button>
+                                        <button class="content-btn">120 متر</button>
+                                        <button class="content-btn">140 متر</button>
+                                        <button class="content-btn">160 متر</button>
+                                        <button class="content-btn">180 متر</button>
+                                        <button class="content-btn">200 متر</button>
+                                        <button class="content-btn">300 متر</button>
+                                        <button class="content-btn">400 متر</button>
+                                    </div>
+                                </div>
                             </div>
+
                         </div>
                         <div class="col-6 col-md-4 border">
                             <div class="item-header bg-white rounded-bottom  cursor-pointer"

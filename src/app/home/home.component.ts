@@ -9,7 +9,8 @@ import { timer } from 'rxjs';
 export class HomeComponent implements OnInit {
 
   // VARS 
-
+  leastMeter = '';
+  mostMeter = '';
   mainBtn = 'buy';
 
   openSearchControl = '';
@@ -52,11 +53,19 @@ export class HomeComponent implements OnInit {
       if (this.openSearchControl === 'melk' && e.target !== this.melkElement.nativeElement && e.target !== this.melkBtn.nativeElement
         && !Array.from(this.melkElement.nativeElement.children).find(x => x == e.target)) {
         this.openSearchControl = '';
-      } if (this.openSearchControl === 'meter' && e.target !== this.meterElement.nativeElement && e.target !== this.meterBtn.nativeElement
-        && !Array.from(this.meterElement.nativeElement.children).find(x => x == e.target)) {
+      }
+      let meterChildrentClicked =
+        Array.from(this.meterElement.nativeElement.children[0].children[0].children).find(x => x == e.target) || Array.from(this.meterElement.nativeElement.children[0].children[1].children).find(x => x == e.target);
+    
+     
+
+        if (this.openSearchControl === 'meter' && e.target !== this.meterElement.nativeElement && e.target !== this.meterBtn.nativeElement
+        && !meterChildrentClicked) {
         this.openSearchControl = '';
-      } if (this.openSearchControl === 'price' && e.target !== this.priceElement.nativeElement && e.target !== this.priceBtn.nativeElement
-        && !Array.from(this.priceElement.nativeElement.children).find(x => x == e.target)) {
+      }
+
+      if (this.openSearchControl === 'price' && e.target !== this.priceElement.nativeElement && e.target !== this.priceBtn.nativeElement
+        && !Array.from(this.meterElement.nativeElement.children[0].children[1].children).find(x => x == e.target)) {
         this.openSearchControl = '';
       }
     })
