@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { timer } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -23,25 +24,31 @@ export class HomeComponent implements OnInit {
     'تهران',
   ]
   states = ['آپارتمان', 'ویلا و باغ', 'زمین و کلنگی', 'اداری', 'تجاری', 'مستغلات'];
-selectedStates={
-  apartment:false,
-  field:false,
-  land:false,
-  mostaghelat:false,
-  organization:false,
-  commercial:false, 
-}
+  selectedStates = {
+    apartment: false,
+    field: false,
+    land: false,
+    mostaghelat: false,
+    organization: false,
+    commercial: false,
+  }
   @ViewChild('melkElement') melkElement!: ElementRef;
   @ViewChild('melkBtn') melkBtn!: ElementRef;
 
   // FUNCTIONS
-  doSomething(){console.log(this.selectedStates)}
+  doSomething() {
+
+    const source = timer(10);
+    const subscribe = source.subscribe(val => 
+      console.log(this.selectedStates));
+
+  }
 
   constructor(private renderer: Renderer2) {
     this.renderer.listen('window', 'click', (e: Event) => {
       if (e.target !== this.melkElement.nativeElement && e.target !== this.melkBtn.nativeElement
         && !Array.from(this.melkElement.nativeElement.children).find(x => x == e.target)) {
-         this.openSearchControl = '';
+        this.openSearchControl = '';
       }
     })
 
