@@ -157,7 +157,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 mt-4 more-options-panel">
+                        <div class="col-12 mt-4 " [ngClass]="{'more-options-panel':!openSearchOptions}" >
                             <a class="more-options cursor-pointer text-white font-small mx-2"
                                 (click)="openSearchOptions = !openSearchOptions">گزینه های بیشتر</a>
                             <a class="more-options cursor-pointer text-primary font-small">پاک کردن</a>
