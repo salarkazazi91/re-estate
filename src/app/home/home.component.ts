@@ -11,6 +11,10 @@ export class HomeComponent implements OnInit {
   // VARS 
   leastMeter = '';
   mostMeter = '';
+
+  leastPrice = '';
+  mostPrice = '';
+
   mainBtn = 'buy';
 
   openSearchControl = '';
@@ -55,18 +59,22 @@ export class HomeComponent implements OnInit {
         this.openSearchControl = '';
       }
       let meterChildrentClicked =
-        Array.from(this.meterElement.nativeElement.children[0].children[0].children).find(x => x == e.target) || Array.from(this.meterElement.nativeElement.children[0].children[1].children).find(x => x == e.target);
-    
-     
+      Array.from(this.meterElement.nativeElement.children[0].children[0].children).find(x => x == e.target) || Array.from(this.meterElement.nativeElement.children[0].children[1].children).find(x => x == e.target);
+  
+      let priceChildrentClicked =
+      Array.from(this.priceElement.nativeElement.children[0].children[0].children).find(x => x == e.target) || Array.from(this.meterElement.nativeElement.children[0].children[1].children).find(x => x == e.target);
+  
+   
 
         if (this.openSearchControl === 'meter' && e.target !== this.meterElement.nativeElement && e.target !== this.meterBtn.nativeElement
         && !meterChildrentClicked) {
         this.openSearchControl = '';
       }
 
+      
       if (this.openSearchControl === 'price' && e.target !== this.priceElement.nativeElement && e.target !== this.priceBtn.nativeElement
-        && !Array.from(this.meterElement.nativeElement.children[0].children[1].children).find(x => x == e.target)) {
-        this.openSearchControl = '';
+      && !priceChildrentClicked) {
+      this.openSearchControl = '';
       }
     })
 

@@ -106,9 +106,48 @@
                         <div class="search-item item-3 col-6 col-md-4  mt-2 pe-2 search-item">
                             <div class="item-header bg-white rounded-bottom  cursor-pointer"
                                 (click)="searchContollClicked('price')" #priceBtn>قیمت</div>
-                            <div class="item-context bg-white border rounded" (click)="doSomething()"
+                                <div class="item-context bg-white border rounded" (click)="doSomething()"
                                 [ngClass]="{'hide':openSearchControl!='price'}" #priceElement>
-                                im some ...2
+                                <div class="meter-content row">
+                                    <div class="context-column col-6 p-0 text-center">
+                                        <h6>حداقل</h6>
+                                        <input type="text" [(ngModel)]="leastPrice">
+                                        <button class="content-btn active" (click)="leastPrice=''">0</button>
+                                        <button class="content-btn" (click)="leastPrice='۲۰۰ میلیون'">۲۰۰ میلیون</button>
+                                        <button class="content-btn">۳۰۰ میلیون</button>
+                                        <button class="content-btn">۴۰۰ میلیون</button>
+                                        <button class="content-btn">۵۰۰ میلیون</button>
+                                        <button class="content-btn">۶۰۰ میلیون</button>
+                                        <button class="content-btn">۷۰۰ میلیون</button>
+                                        <button class="content-btn">۸۰۰ میلیون</button>
+                                        <button class="content-btn">۹۰۰ میلیون</button>
+                                        <button class="content-btn">۱۰ میلیادر</button>
+                                        <button class="content-btn">۲۰ میلیادر</button>
+                                        <button class="content-btn">۳۰ میلیادر</button>
+                                        <button class="content-btn">۴۰ میلیادر</button>
+                                        <button class="content-btn">۵۰ میلیادر</button>
+                                        <button class="content-btn">۶۰ میلیادر</button>
+                                    </div>
+                                    <div class="context-column col-6 p-0 text-center">
+                                        <h6>حداکثر</h6>
+                                        <input type="text" [(ngModel)]="mostPrice">
+                                        <button class="content-btn active">همه</button>
+                                        <button class="content-btn">۲۰۰ میلیون</button>
+                                        <button class="content-btn">۳۰۰ میلیون</button>
+                                        <button class="content-btn">۴۰۰ میلیون</button>
+                                        <button class="content-btn">۵۰۰ میلیون</button>
+                                        <button class="content-btn">۶۰۰ میلیون</button>
+                                        <button class="content-btn">۷۰۰ میلیون</button>
+                                        <button class="content-btn">۸۰۰ میلیون</button>
+                                        <button class="content-btn">۹۰۰ میلیون</button>
+                                        <button class="content-btn">۱۰ میلیادر</button>
+                                        <button class="content-btn">۲۰ میلیادر</button>
+                                        <button class="content-btn">۳۰ میلیادر</button>
+                                        <button class="content-btn">۴۰ میلیادر</button>
+                                        <button class="content-btn">۵۰ میلیادر</button>
+                                        <button class="content-btn">۶۰ میلیادر</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
