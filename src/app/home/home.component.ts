@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   mainBtn = 'buy';
 
   openSearchControl = '';
-
+  openSearchOptions=false;
 
   tags = [
     'تهران',
@@ -62,7 +62,7 @@ export class HomeComponent implements OnInit {
       Array.from(this.meterElement.nativeElement.children[0].children[0].children).find(x => x == e.target) || Array.from(this.meterElement.nativeElement.children[0].children[1].children).find(x => x == e.target);
   
       let priceChildrentClicked =
-      Array.from(this.priceElement.nativeElement.children[0].children[0].children).find(x => x == e.target) || Array.from(this.meterElement.nativeElement.children[0].children[1].children).find(x => x == e.target);
+      Array.from(this.priceElement.nativeElement.children[0].children[0].children).find(x => x == e.target) || Array.from(this.priceElement.nativeElement.children[0].children[1].children).find(x => x == e.target);
   
    
 
