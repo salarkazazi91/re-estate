@@ -38,10 +38,10 @@
                         <div class="col-4 col-lg-2 pe-2 rounded"> <button
                                 class="search-btn bg-cyan text-white rounded border-0">جستجو</button>
                         </div>
-                        <div class="search-item col-12 col-md-4 mt-2">
+                        <div class="search-item item-1 col-12 col-md-4 mt-2">
                             <div class="item-header bg-white rounded-bottom  cursor-pointer"
                                 (click)="searchContollClicked('melk')" #melkBtn>نوع ملک</div>
-                            <div class="item-context bg-white border rounded" (click)="doSomething()"
+                            <div class="item-context grid-context bg-white border rounded" (click)="doSomething()"
                                 [ngClass]="{'hide':openSearchControl!='melk'}" #melkElement>
                                 <input type="checkbox" name="apartment" id="apartment"
                                     [(ngModel)]="selectedStates.apartment">
@@ -61,16 +61,16 @@
                                 <label class="context-tag" for="mostaghelat">مستغلات</label>
                             </div>
                         </div>
-                        <div class="col-6 col-md-4 border">
+                        <div class="search-item item-2 col-6 col-md-4 ps-0 mt-2 search-item">
                             <div class="item-header bg-white rounded-bottom cursor-pointer"
                                 (click)="searchContollClicked('meter')" #meterBtn>متراژ</div>
                             <div class="item-context bg-white border rounded" (click)="doSomething()"
                                 [ngClass]="{'hide':openSearchControl!='meter'}" #meterElement>
                                 <div class="meter-content row">
-                                    <div class="col-6">
+                                    <div class="context-column col-6 p-0 text-center">
                                         <h6>حداقل</h6>
                                         <input type="text" [(ngModel)]="leastMeter">
-                                        <button class="content-btn">0</button>
+                                        <button class="content-btn active">0</button>
                                         <button class="content-btn">60 متر</button>
                                         <button class="content-btn">70 متر</button>
                                         <button class="content-btn">80 متر</button>
@@ -83,10 +83,10 @@
                                         <button class="content-btn">200 متر</button>
                                         <button class="content-btn">300 متر</button>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="context-column col-6 p-0 text-center">
                                         <h6>حداکثر</h6>
                                         <input type="text" [(ngModel)]="leastMeter">
-                                        <button class="content-btn">همه</button>
+                                        <button class="content-btn active">همه</button>
                                         <button class="content-btn">70 متر</button>
                                         <button class="content-btn">80 متر</button>
                                         <button class="content-btn">90 متر</button>
@@ -103,7 +103,7 @@
                             </div>
 
                         </div>
-                        <div class="col-6 col-md-4 border">
+                        <div class="search-item item-3 col-6 col-md-4  mt-2 pe-2 search-item">
                             <div class="item-header bg-white rounded-bottom  cursor-pointer"
                                 (click)="searchContollClicked('price')" #priceBtn>قیمت</div>
                             <div class="item-context bg-white border rounded" (click)="doSomething()"
