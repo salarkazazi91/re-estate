@@ -38,7 +38,7 @@
                         <div class="col-4 col-lg-2 pe-2 rounded"> <button
                                 class="search-btn bg-cyan text-white rounded border-0">جستجو</button>
                         </div>
-                        <div class="col-12 hide-more-options" [ngClass]="{'open-more-options':openSearchOptions}">
+                        <div class="col-12 " [ngClass]="openSearchOptions?'open-more-options':'hide-more-options'">
                             <div class="row">
                                 <div class="search-item item-1 col-12 col-md-4 mt-2">
                                     <div class="item-header bg-white rounded-bottom  cursor-pointer"
