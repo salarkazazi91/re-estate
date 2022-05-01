@@ -183,7 +183,36 @@
 
     }
 }
+  
 
+[class^="icon2-"], [class*=" icon2-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon2' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon2-room:before {
+    content: "\e902";
+  }
+  .icon2-measure:before {
+    content: "\e900";
+  }
+  .icon2-money:before {
+    content: "\e901";
+  }
+  .icon2-apartment:before {
+    content: "\e903";
+  }
+  
 
 ::-webkit-scrollbar {
     width: 6px;
