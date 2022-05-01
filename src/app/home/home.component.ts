@@ -18,7 +18,51 @@ export class HomeComponent implements OnInit {
   mainBtn = 'buy';
 
   openSearchControl = '';
-  openSearchOptions=false;
+  openSearchOptions = false;
+  private imagePath = '../../assets/images/';
+  apartments = [
+    {
+      image: this.imagePath + 'home-main.png',
+      title: 'آپارتمان 90 متری برای فروش در شهر زیبا ، تهران',
+      type: 'apartment',
+      size:90,
+      rooms:2,
+      price:3800000
+    },
+    {
+      image: this.imagePath + 'home-main.png',
+      title: 'آپارتمان 90 متری برای فروش در شهر زیبا ، تهران',
+      type: 'apartment',
+      size:90,
+      rooms:2,
+      price:3800000
+    },
+    {
+      image: this.imagePath + 'home-main.png',
+      title: 'آپارتمان 90 متری برای فروش در شهر زیبا ، تهران',
+      type: 'apartment',
+      size:90,
+      rooms:2,
+      price:3800000
+    },
+    {
+      image: this.imagePath + 'home-main.png',
+      title: 'آپارتمان 90 متری برای فروش در شهر زیبا ، تهران',
+      type: 'apartment',
+      size:90,
+      rooms:2,
+      price:3800000
+    },
+    {
+      image: this.imagePath + 'home-main.png',
+      title: 'آپارتمان 90 متری برای فروش در شهر زیبا ، تهران',
+      type: 'apartment',
+      size:90,
+      rooms:2,
+      price:3800000
+    },
+  ]
+
 
   tags = [
     'تهران',
@@ -59,22 +103,22 @@ export class HomeComponent implements OnInit {
         this.openSearchControl = '';
       }
       let meterChildrentClicked =
-      Array.from(this.meterElement.nativeElement.children[0].children[0].children).find(x => x == e.target) || Array.from(this.meterElement.nativeElement.children[0].children[1].children).find(x => x == e.target);
-  
-      let priceChildrentClicked =
-      Array.from(this.priceElement.nativeElement.children[0].children[0].children).find(x => x == e.target) || Array.from(this.priceElement.nativeElement.children[0].children[1].children).find(x => x == e.target);
-  
-   
+        Array.from(this.meterElement.nativeElement.children[0].children[0].children).find(x => x == e.target) || Array.from(this.meterElement.nativeElement.children[0].children[1].children).find(x => x == e.target);
 
-        if (this.openSearchControl === 'meter' && e.target !== this.meterElement.nativeElement && e.target !== this.meterBtn.nativeElement
+      let priceChildrentClicked =
+        Array.from(this.priceElement.nativeElement.children[0].children[0].children).find(x => x == e.target) || Array.from(this.priceElement.nativeElement.children[0].children[1].children).find(x => x == e.target);
+
+
+
+      if (this.openSearchControl === 'meter' && e.target !== this.meterElement.nativeElement && e.target !== this.meterBtn.nativeElement
         && !meterChildrentClicked) {
         this.openSearchControl = '';
       }
 
-      
+
       if (this.openSearchControl === 'price' && e.target !== this.priceElement.nativeElement && e.target !== this.priceBtn.nativeElement
-      && !priceChildrentClicked) {
-      this.openSearchControl = '';
+        && !priceChildrentClicked) {
+        this.openSearchControl = '';
       }
     })
 

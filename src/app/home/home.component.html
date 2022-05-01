@@ -157,7 +157,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 mt-4 " [ngClass]="{'more-options-panel':!openSearchOptions}" >
+                        <div class="col-12 mt-4 " [ngClass]="{'more-options-panel':!openSearchOptions}">
                             <a class="more-options cursor-pointer text-white font-small mx-2"
                                 (click)="openSearchOptions = !openSearchOptions">گزینه های بیشتر</a>
                             <a class="more-options cursor-pointer text-primary font-small">پاک کردن</a>
@@ -165,6 +165,26 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+<section class="suggested-apartments">
+    <h2 class="suggested-header">آپارتمان های پیشنهادی در تهران</h2>
+    <div class="apt-cards">
+        <div class="card" *ngFor="let apartment of apartments" class="border">
+            <img [src]="apartment.image" alt="" class="image">
+            <h3 class="caption-title">{{apartment.title}}</h3>
+            <ul class="caption-content">
+                <li>
+                    <i></i>
+                <span>
+                    {{apartment.type}}
+                </span>
+                </li>
+                <li>{{apartment.size}}</li>
+                <li>{{apartment.rooms}}</li>
+                <li>{{apartment.price}}</li>
+            </ul>
         </div>
     </div>
 </section>
