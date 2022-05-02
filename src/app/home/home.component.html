@@ -172,37 +172,41 @@
     <div class="header">
         <h2 class="suggested">آپارتمان های پیشنهادی در تهران</h2>
         <div class="bar"></div>
-    </div> 
-    <div class="apt-cards">
-        <div class="card" *ngFor="let apartment of apartments" class="border">
-            <img [src]="apartment.image" alt="" class="image">
-            <h3 class="caption-title">{{apartment.title}}</h3>
-            <ul class="caption-content">
-                <li>
-                    <span>
-                        <i class="icon2-apartment"></i>
-                        {{apartment.type}}
-                    </span>
-                </li>
-                <li>
-                    <span>
-                        <i class="icon2-measure"></i>
-                        {{apartment.size}}
-                    </span>
-                </li>
-                <li>
-                    <span>
-                        <i class="icon2-room"></i>
-                        {{apartment.rooms}}
-                    </span>
-                </li>
-                <li>
-                    <span>
-                        <i class="icon2-money"></i>
-                        {{apartment.price}}
-                    </span>
-                </li>
-            </ul>
+    </div>
+    <div class="apt-cards p-5">
+        <div class="row">
+            <div class="card border col-12 col-md-6 col-xxl-4" *ngFor="let apartment of apartments">
+                <img [src]="apartment.image" alt="" class="image">
+                <div class="details">
+                    <h3 class="caption-title font-small text-primary ">{{apartment.title}}</h3>
+                    <ul class="caption-content d-flex justify-content-start ">
+                        <li>
+                            <span>
+                                <i class="icon2-apartment"></i>
+                                {{apartment.type}}
+                            </span>
+                        </li>
+                        <li>
+                            <span>
+                                <i class="icon2-measure"></i>
+                                {{apartment.size}}
+                            </span>
+                        </li>
+                        <li>
+                            <span>
+                                <i class="icon2-room"></i>
+                                {{apartment.rooms}}
+                            </span>
+                        </li>
+                        <li>
+                            <span>
+                                <i class="icon2-money"></i>
+                                {{apartment.price}}
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
-</section>
+</section> 

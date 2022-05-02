@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
   private imagePath = '../../assets/images/';
   apartments = [
     {
-      image: this.imagePath + 'home-main.png',
+      image: this.imagePath + 'house.jpg',
       title: 'آپارتمان 90 متری برای فروش در شهر زیبا ، تهران',
       type: 'آپارتمان',
       size:90,
@@ -35,8 +35,8 @@ export class HomeComponent implements OnInit {
       size:90,
       rooms:2,
       price:3800000
-    },{
-      image: this.imagePath + 'home-main.png',
+    }, {
+      image: this.imagePath + 'house.jpg',
       title: 'آپارتمان 90 متری برای فروش در شهر زیبا ، تهران',
       type: 'آپارتمان',
       size:90,
@@ -49,7 +49,21 @@ export class HomeComponent implements OnInit {
       size:90,
       rooms:2,
       price:3800000
-    },
+    }, {
+      image: this.imagePath + 'house.jpg',
+      title: 'آپارتمان 90 متری برای فروش در شهر زیبا ، تهران',
+      type: 'آپارتمان',
+      size:90,
+      rooms:2,
+      price:3800000
+    },{
+      image: this.imagePath + 'home-main.png',
+      title: 'آپارتمان 90 متری برای فروش در شهر زیبا ، تهران',
+      type: 'آپارتمان',
+      size:90,
+      rooms:2,
+      price:3800000
+    }, 
   ]
 
 
