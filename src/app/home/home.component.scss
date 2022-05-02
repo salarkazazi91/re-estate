@@ -198,34 +198,36 @@
 
         }
     }
+section{
 
+    .header {
+        position: relative;
+
+        .content {
+            margin          : 2rem auto;
+            width           : fit-content;
+            position        : relative;
+            z-index         : 2;
+            background-color: white;
+            padding         : 0 1rem;
+        }
+
+        .bar {
+            position        : absolute;
+            top             : 50%;
+            left            : 0%;
+            right           : 0%;
+            z-index         : -1;
+            height          : 2px;
+            background-color: $clr-light-gray;
+            width           : 95vw;
+            margin          : 0 auto;
+            transform       : translate(0, -50%);
+        }
+    }
+}
     section.suggested-apartments {
 
-        .header {
-            position: relative;
-
-            .suggested {
-                margin          : 2rem auto;
-                width           : fit-content;
-                position        : relative;
-                z-index         : 2;
-                background-color: white;
-                padding         : 0 1rem;
-            }
-
-            .bar {
-                position        : absolute;
-                top             : 50%;
-                left            : 0%;
-                right           : 0%;
-                z-index         : -1;
-                height          : 2px;
-                background-color: $clr-light-gray;
-                width           : 95vw;
-                margin          : 0 auto;
-                transform       : translate(0, -50%);
-            }
-        }
 
         .apt-cards {
             .card {
