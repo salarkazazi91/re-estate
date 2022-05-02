@@ -9,12 +9,25 @@
 * {
     box-sizing: border-box;
 }
+html{
+    
+    -ms-overflow-style: none;
+    /* Internet Explorer 10+ */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+html::-webkit-scrollbar {
+    display: none;
+    /* Safari and Chrome */
+}
 
 body {
     font-family: IRANSansWebNum, sans-serif;
     direction: rtl;
     padding: 0% !important;
 }
+
 
 li {
     list-style: none;
@@ -59,7 +72,7 @@ img {
 .hide {
     display: none !important;
 }
-  
+
 
 // END COLORS--------------------------
 

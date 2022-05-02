@@ -24,39 +24,28 @@ export class HomeComponent implements OnInit {
     {
       image: this.imagePath + 'home-main.png',
       title: 'آپارتمان 90 متری برای فروش در شهر زیبا ، تهران',
-      type: 'apartment',
+      type: 'آپارتمان',
       size:90,
       rooms:2,
       price:3800000
-    },
-    {
+    },{
       image: this.imagePath + 'home-main.png',
       title: 'آپارتمان 90 متری برای فروش در شهر زیبا ، تهران',
-      type: 'apartment',
+      type: 'آپارتمان',
       size:90,
       rooms:2,
       price:3800000
-    },
-    {
+    },{
       image: this.imagePath + 'home-main.png',
       title: 'آپارتمان 90 متری برای فروش در شهر زیبا ، تهران',
-      type: 'apartment',
+      type: 'آپارتمان',
       size:90,
       rooms:2,
       price:3800000
-    },
-    {
+    },{
       image: this.imagePath + 'home-main.png',
       title: 'آپارتمان 90 متری برای فروش در شهر زیبا ، تهران',
-      type: 'apartment',
-      size:90,
-      rooms:2,
-      price:3800000
-    },
-    {
-      image: this.imagePath + 'home-main.png',
-      title: 'آپارتمان 90 متری برای فروش در شهر زیبا ، تهران',
-      type: 'apartment',
+      type: 'آپارتمان',
       size:90,
       rooms:2,
       price:3800000

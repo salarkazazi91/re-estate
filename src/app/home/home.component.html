@@ -169,25 +169,39 @@
     </div>
 </section>
 <section class="suggested-apartments">
-    <h2 class="suggested-header">آپارتمان های پیشنهادی در تهران</h2>
+    <div class="header">
+        <h2 class="suggested">آپارتمان های پیشنهادی در تهران</h2>
+        <div class="bar"></div>
+    </div> 
     <div class="apt-cards">
         <div class="card" *ngFor="let apartment of apartments" class="border">
             <img [src]="apartment.image" alt="" class="image">
             <h3 class="caption-title">{{apartment.title}}</h3>
             <ul class="caption-content">
                 <li>
-                    <i></i>
-                <span>
-                    {{apartment.type}}
-                    <span class="icon2-room"></span>
-                    <span class="icon2-money"></span>
-                    <span class="icon2-measure"></span> 
-                    <span class="icon2-apartment"></span>
-                </span>
+                    <span>
+                        <i class="icon2-apartment"></i>
+                        {{apartment.type}}
+                    </span>
                 </li>
-                <li>{{apartment.size}}</li>
-                <li>{{apartment.rooms}}</li>
-                <li>{{apartment.price}}</li>
+                <li>
+                    <span>
+                        <i class="icon2-measure"></i>
+                        {{apartment.size}}
+                    </span>
+                </li>
+                <li>
+                    <span>
+                        <i class="icon2-room"></i>
+                        {{apartment.rooms}}
+                    </span>
+                </li>
+                <li>
+                    <span>
+                        <i class="icon2-money"></i>
+                        {{apartment.price}}
+                    </span>
+                </li>
             </ul>
         </div>
     </div>
