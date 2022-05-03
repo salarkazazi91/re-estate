@@ -5,8 +5,7 @@ import { HomeComponent } from './home/home.component';
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
-    pathMatch: 'full'
+    loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
   },
   {
     path: '**',
