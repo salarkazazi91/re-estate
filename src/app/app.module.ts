@@ -9,6 +9,7 @@ import { NgPersianDatepickerModule } from 'ng-persian-datepicker';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { SwiperModule } from "swiper/angular";
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { NavigationComponent } from './navigation/navigation.component';
     ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    SwiperModule
   ],
   providers: [],
   bootstrap: [AppComponent]
