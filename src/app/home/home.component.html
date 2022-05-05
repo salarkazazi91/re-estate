@@ -338,18 +338,33 @@
     <h2 class="content">آژانس های همکار</h2>
     <div class="bar"></div>
     <div class="ctm-carousel">
-      <swiper
-      [config]="config"
-        class="mySwiper"
-      >
+      <swiper [config]="config" class="mySwiper">
         <ng-template swiperSlide *ngFor="let agancy of [1, 2, 3, 4, 5, 6]">
           <div
             class="ctm-carousel-card"
-            [ngStyle]="{ 'background-position': '0px ' + agancy*-129 + 'px' }"
-          >
-          </div>
+            [ngStyle]="{ 'background-position': '0px ' + agancy * -129 + 'px' }"
+          ></div>
         </ng-template>
       </swiper>
     </div>
+  </div>
+</section>
+<section class="apartment-links">
+  <div class="ads">
+    <div class="buy">
+      <div><a href="#" class="crm-link">خرید آپارتمان در تهران <span>( ۱۲۳ )</span> </a></div>
+      <div><a href="#" class="crm-link"> خرید آپارتمان در پونک <span>( ۲۳۴ )</span> </a></div>
+      <div><a href="#" class="crm-link">خرید آپارتمان در فرمانیه <span>( ۱۲۵۳ )</span> </a></div>
+      <div><a href="#" class="crm-link"> خرید آپارتمان در نیاوران <span>( ۱۲۳۴۱ )</span> </a></div>
+      <div><a href="#" class="crm-link">خرید آپارتمان در زعفرانیه <span>( ۵۵ )</span> </a></div>
+      <div><a href="#" class="crm-link">خرید آپارتمان در سعادت آباد <span>( ۲۱۴۳ )</span> </a></div>
+      <div><a href="#" class="crm-link">خرید آپارتمان در بلوار فردوس <span>( ۴۶۷ )</span> </a></div>
+      <div><a href="#" class="crm-link">خرید آپارتمان در قیطریه <span>( ۶۷۹۷ )</span> </a></div>
+      <div><a href="#" class="crm-link">خرید آپارتمان در پاسداران <span>( ۲۳۴۵ )</span> </a></div>
+      <div><a href="#" class="crm-link">خرید آپارتمان در شهرک غرب <span>( ۷۵۵۷ )</span> </a></div>
+      <div><a href="#" class="crm-link">خرید آپارتمان در جردن <span>( ۸۶۹ )</span> </a></div>
+    </div>
+    <div class="rent"></div>
+    <div class="other-regions"></div>
   </div>
 </section>
