@@ -265,6 +265,7 @@ section.ctm-agancy {
   .ctm-carousel {
     .ctm-carousel-card {
       background: url("../../assets/images/agancies.jpg");
+      border: 1px solid $clr-dark-gray;
       border-radius: 5px;
       cursor: pointer;
       width: 129px;

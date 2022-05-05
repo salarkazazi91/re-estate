@@ -1,9 +1,16 @@
-import { Component, ElementRef, OnInit, Renderer2, ViewChild ,ViewEncapsulation} from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  OnInit,
+  Renderer2,
+  ViewChild,
+  ViewEncapsulation,
+} from '@angular/core';
 import { timer } from 'rxjs';
-import { SwiperComponent } from "swiper/angular";
+import { SwiperComponent } from 'swiper/angular';
 
 // import Swiper core and required modules
-import SwiperCore, { Pagination, Navigation } from "swiper";
+import SwiperCore, { Pagination, Navigation, SwiperOptions } from 'swiper';
 
 // install Swiper modules
 SwiperCore.use([Pagination, Navigation]);
@@ -11,11 +18,10 @@ SwiperCore.use([Pagination, Navigation]);
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class HomeComponent implements OnInit {
-
-  // VARS 
+  // VARS
   leastMeter = '';
   mostMeter = '';
 
@@ -32,54 +38,61 @@ export class HomeComponent implements OnInit {
       image: this.imagePath + 'house.jpg',
       title: 'آپارتمان 90 متری برای فروش در شهر زیبا ، تهران',
       type: 'آپارتمان',
-      size:90,
-      rooms:2,
-      price:3800000
-    },{
+      size: 90,
+      rooms: 2,
+      price: 3800000,
+    },
+    {
       image: this.imagePath + 'home-main.png',
       title: 'آپارتمان 90 متری برای فروش در شهر زیبا ، تهران',
       type: 'آپارتمان',
-      size:90,
-      rooms:2,
-      price:3800000
-    }, {
+      size: 90,
+      rooms: 2,
+      price: 3800000,
+    },
+    {
       image: this.imagePath + 'house.jpg',
       title: 'آپارتمان 90 متری برای فروش در شهر زیبا ، تهران',
       type: 'آپارتمان',
-      size:90,
-      rooms:2,
-      price:3800000
-    },{
+      size: 90,
+      rooms: 2,
+      price: 3800000,
+    },
+    {
       image: this.imagePath + 'home-main.png',
       title: 'آپارتمان 90 متری برای فروش در شهر زیبا ، تهران',
       type: 'آپارتمان',
-      size:90,
-      rooms:2,
-      price:3800000
-    }, {
+      size: 90,
+      rooms: 2,
+      price: 3800000,
+    },
+    {
       image: this.imagePath + 'house.jpg',
       title: 'آپارتمان 90 متری برای فروش در شهر زیبا ، تهران',
       type: 'آپارتمان',
-      size:90,
-      rooms:2,
-      price:3800000
-    },{
+      size: 90,
+      rooms: 2,
+      price: 3800000,
+    },
+    {
       image: this.imagePath + 'home-main.png',
       title: 'آپارتمان 90 متری برای فروش در شهر زیبا ، تهران',
       type: 'آپارتمان',
-      size:90,
-      rooms:2,
-      price:3800000
-    }, 
-  ]
+      size: 90,
+      rooms: 2,
+      price: 3800000,
+    },
+  ];
 
-
-  tags = [
-    'تهران',
-    'تهران',
-    'تهران',
-  ]
-  states = ['آپارتمان', 'ویلا و باغ', 'زمین و کلنگی', 'اداری', 'تجاری', 'مستغلات'];
+  tags = ['تهران', 'تهران', 'تهران'];
+  states = [
+    'آپارتمان',
+    'ویلا و باغ',
+    'زمین و کلنگی',
+    'اداری',
+    'تجاری',
+    'مستغلات',
+  ];
   selectedStates = {
     apartment: false,
     field: false,
@@ -87,7 +100,7 @@ export class HomeComponent implements OnInit {
     mostaghelat: false,
     organization: false,
     commercial: false,
-  }
+  };
   @ViewChild('melkElement') melkElement!: ElementRef;
   @ViewChild('melkBtn') melkBtn!: ElementRef;
 
@@ -97,54 +110,93 @@ export class HomeComponent implements OnInit {
   @ViewChild('priceElement') priceElement!: ElementRef;
   @ViewChild('priceBtn') priceBtn!: ElementRef;
 
+  config: SwiperOptions = {
+    slidesPerView: 1,
+    slidesPerGroup: 1,
+    spaceBetween: 50,
+    navigation: true,
+    pagination: { clickable: true },
+    scrollbar: { draggable: true },
+    loop: true,
+    loopFillGroupWithBlank: true,
+
+    breakpoints: {
+      512: {
+        spaceBetween: 25,
+        slidesPerView: 2,
+      },
+      768: {
+        slidesPerView: 3,
+      },
+      1024: {
+        slidesPerView: 4,
+      },
+    },
+  };
+
   // FUNCTIONS
   doSomething() {
-
     const source = timer(10);
-    const subscribe = source.subscribe(val =>
-      console.log(this.selectedStates));
-
+    const subscribe = source.subscribe((val) =>
+      console.log(this.selectedStates)
+    );
   }
 
   constructor(private renderer: Renderer2) {
     this.renderer.listen('window', 'click', (e: Event) => {
-      if (this.openSearchControl === 'melk' && e.target !== this.melkElement.nativeElement && e.target !== this.melkBtn.nativeElement
-        && !Array.from(this.melkElement.nativeElement.children).find(x => x == e.target)) {
+      if (
+        this.openSearchControl === 'melk' &&
+        e.target !== this.melkElement.nativeElement &&
+        e.target !== this.melkBtn.nativeElement &&
+        !Array.from(this.melkElement.nativeElement.children).find(
+          (x) => x == e.target
+        )
+      ) {
         this.openSearchControl = '';
       }
       let meterChildrentClicked =
-        Array.from(this.meterElement.nativeElement.children[0].children[0].children).find(x => x == e.target) || Array.from(this.meterElement.nativeElement.children[0].children[1].children).find(x => x == e.target);
+        Array.from(
+          this.meterElement.nativeElement.children[0].children[0].children
+        ).find((x) => x == e.target) ||
+        Array.from(
+          this.meterElement.nativeElement.children[0].children[1].children
+        ).find((x) => x == e.target);
 
       let priceChildrentClicked =
-        Array.from(this.priceElement.nativeElement.children[0].children[0].children).find(x => x == e.target) || Array.from(this.priceElement.nativeElement.children[0].children[1].children).find(x => x == e.target);
+        Array.from(
+          this.priceElement.nativeElement.children[0].children[0].children
+        ).find((x) => x == e.target) ||
+        Array.from(
+          this.priceElement.nativeElement.children[0].children[1].children
+        ).find((x) => x == e.target);
 
-
-
-      if (this.openSearchControl === 'meter' && e.target !== this.meterElement.nativeElement && e.target !== this.meterBtn.nativeElement
-        && !meterChildrentClicked) {
+      if (
+        this.openSearchControl === 'meter' &&
+        e.target !== this.meterElement.nativeElement &&
+        e.target !== this.meterBtn.nativeElement &&
+        !meterChildrentClicked
+      ) {
         this.openSearchControl = '';
       }
 
-
-      if (this.openSearchControl === 'price' && e.target !== this.priceElement.nativeElement && e.target !== this.priceBtn.nativeElement
-        && !priceChildrentClicked) {
+      if (
+        this.openSearchControl === 'price' &&
+        e.target !== this.priceElement.nativeElement &&
+        e.target !== this.priceBtn.nativeElement &&
+        !priceChildrentClicked
+      ) {
         this.openSearchControl = '';
       }
-    })
-
+    });
   }
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 
   removeTag(tag: string) {
-    this.tags.splice(this.tags.indexOf(tag), 1)
+    this.tags.splice(this.tags.indexOf(tag), 1);
   }
 
   searchContollClicked(control: string) {
-
     this.openSearchControl = this.openSearchControl == control ? '' : control;
   }
-
 }

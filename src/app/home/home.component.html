@@ -339,15 +339,7 @@
     <div class="bar"></div>
     <div class="ctm-carousel">
       <swiper
-        [slidesPerView]="4"
-        [spaceBetween]="1"
-        [slidesPerGroup]="3"
-        [loop]="true"
-        [loopFillGroupWithBlank]="true"
-        [pagination]="{
-          clickable: true
-        }"
-        [navigation]="true"
+      [config]="config"
         class="mySwiper"
       >
         <ng-template swiperSlide *ngFor="let agancy of [1, 2, 3, 4, 5, 6]">
@@ -355,7 +347,6 @@
             class="ctm-carousel-card"
             [ngStyle]="{ 'background-position': '0px ' + agancy*-129 + 'px' }"
           >
-            asd
           </div>
         </ng-template>
       </swiper>
