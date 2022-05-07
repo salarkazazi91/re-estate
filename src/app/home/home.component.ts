@@ -110,6 +110,25 @@ export class HomeComponent implements OnInit {
   @ViewChild('priceElement') priceElement!: ElementRef;
   @ViewChild('priceBtn') priceBtn!: ElementRef;
 
+  agencies = [
+    'عطا',
+    
+    'ویهان',
+    
+    'نگین',
+    
+    'ساحل',
+    
+    'پازل',
+    
+    'پارادایم',
+    
+    'بوکان',
+    
+    'ساد',
+    
+  ];
+
   config: SwiperOptions = {
     slidesPerView: 1,
     slidesPerGroup: 1,
@@ -123,13 +142,13 @@ export class HomeComponent implements OnInit {
     breakpoints: {
       512: {
         spaceBetween: 25,
-        slidesPerView: 2,
+        slidesPerView: 1,
       },
       768: {
         slidesPerView: 3,
       },
       1024: {
-        slidesPerView: 4,
+        slidesPerView: 5,
       },
     },
   };
@@ -190,7 +209,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   removeTag(tag: string) {
     this.tags.splice(this.tags.indexOf(tag), 1);
@@ -198,5 +217,10 @@ export class HomeComponent implements OnInit {
 
   searchContollClicked(control: string) {
     this.openSearchControl = this.openSearchControl == control ? '' : control;
+  }
+
+  carouselTransitionEnd([swiper]: any) {
+    console.log(swiper)
+    console.log(swiper.activeIndex)
   }
 }
