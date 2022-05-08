@@ -241,16 +241,16 @@
     <div class="header">
         <h2 class="content">آژانس های همکار</h2>
         <div class="bar"></div>
-        <div class="ctm-carousel">
-            <swiper [config]="config" class="mySwiper" (transitionEnd)="carouselTransitionEnd($event)">
-                <ng-template swiperSlide *ngFor="let agancy of agencies;let index = index">
-                    <div class="ctm-carousel-card"
-                        [ngStyle]="{ 'background-position': '0px ' + ( index   * -129) + 'px' }"> 
-                    </div>
-                   <div class="agancy-name"> {{agancy}}</div>
-                </ng-template>
-            </swiper>
-        </div>
+    </div>
+    <div class="ctm-carousel">
+        <swiper [config]="config" class="mySwiper" (transitionEnd)="carouselTransitionEnd($event)">
+            <ng-template swiperSlide *ngFor="let agancy of agancies;let index = index">
+                <div class="ctm-carousel-card"
+                    [ngStyle]="{ 'background-position': '0px ' + ( index   * -129) + 'px' }"> 
+                </div>
+            </ng-template>
+        </swiper>
+        <div class="agancy-name"> {{selectedAgancy}}</div>
     </div>
 </section>
 <section class="apartment-links">

@@ -1,4 +1,5 @@
 import {
+  ChangeDetectorRef,
   Component,
   ElementRef,
   OnInit,
@@ -110,25 +111,24 @@ export class HomeComponent implements OnInit {
   @ViewChild('priceElement') priceElement!: ElementRef;
   @ViewChild('priceBtn') priceBtn!: ElementRef;
 
-  agencies = [
+  agancies = [
     'عطا',
-    
-    'ویهان',
-    
-    'نگین',
-    
-    'ساحل',
-    
-    'پازل',
-    
-    'پارادایم',
-    
-    'بوکان',
-    
-    'ساد',
-    
-  ];
 
+    'ویهان',
+
+    'نگین',
+
+    'ساحل',
+
+    'پازل',
+
+    'پارادایم',
+
+    'بوکان',
+
+    'ساد',
+  ];
+  selectedAgancy = '';
   config: SwiperOptions = {
     slidesPerView: 1,
     slidesPerGroup: 1,
@@ -161,7 +161,7 @@ export class HomeComponent implements OnInit {
     );
   }
 
-  constructor(private renderer: Renderer2) {
+  constructor(private renderer: Renderer2, private cdr: ChangeDetectorRef) {
     this.renderer.listen('window', 'click', (e: Event) => {
       if (
         this.openSearchControl === 'melk' &&
@@ -209,7 +209,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 
   removeTag(tag: string) {
     this.tags.splice(this.tags.indexOf(tag), 1);
@@ -220,7 +220,12 @@ export class HomeComponent implements OnInit {
   }
 
   carouselTransitionEnd([swiper]: any) {
-    console.log(swiper)
-    console.log(swiper.activeIndex)
+    let index = swiper.activeIndex - 1;
+    index = index >= this.agancies.length ? 0 : index;
+    this.selectedAgancy = this.agancies[index];
+
+    this.cdr.detectChanges();
+    console.log(swiper);
+    console.log(swiper.activeIndex);
   }
 }
