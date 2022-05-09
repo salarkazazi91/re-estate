@@ -243,32 +243,64 @@
         <div class="bar"></div>
     </div>
     <div class="ctm-carousel">
-        <swiper [config]="config" class="mySwiper" (transitionEnd)="carouselTransitionEnd($event)">
+        <swiper
+        
+        [config]="config" class="mySwiper" (transitionEnd)="carouselTransitionEnd($event)">
             <ng-template swiperSlide *ngFor="let agancy of agancies;let index = index">
+                <div class="agancy-name"> {{agancy}}</div>
                 <div class="ctm-carousel-card"
                     [ngStyle]="{ 'background-position': '0px ' + ( index   * -129) + 'px' }"> 
                 </div>
             </ng-template>
         </swiper>
-        <div class="agancy-name"> {{selectedAgancy}}</div>
     </div>
 </section>
 <section class="apartment-links">
     <div class="ads">
-        <div class="buy">
-            <div><a href="#" class="crm-link">خرید آپارتمان در تهران <span>( ۱۲۳ )</span> </a></div>
-            <div><a href="#" class="crm-link"> خرید آپارتمان در پونک <span>( ۲۳۴ )</span> </a></div>
-            <div><a href="#" class="crm-link">خرید آپارتمان در فرمانیه <span>( ۱۲۵۳ )</span> </a></div>
-            <div><a href="#" class="crm-link"> خرید آپارتمان در نیاوران <span>( ۱۲۳۴۱ )</span> </a></div>
-            <div><a href="#" class="crm-link">خرید آپارتمان در زعفرانیه <span>( ۵۵ )</span> </a></div>
-            <div><a href="#" class="crm-link">خرید آپارتمان در سعادت آباد <span>( ۲۱۴۳ )</span> </a></div>
-            <div><a href="#" class="crm-link">خرید آپارتمان در بلوار فردوس <span>( ۴۶۷ )</span> </a></div>
-            <div><a href="#" class="crm-link">خرید آپارتمان در قیطریه <span>( ۶۷۹۷ )</span> </a></div>
-            <div><a href="#" class="crm-link">خرید آپارتمان در پاسداران <span>( ۲۳۴۵ )</span> </a></div>
-            <div><a href="#" class="crm-link">خرید آپارتمان در شهرک غرب <span>( ۷۵۵۷ )</span> </a></div>
-            <div><a href="#" class="crm-link">خرید آپارتمان در جردن <span>( ۸۶۹ )</span> </a></div>
-        </div>
-        <div class="rent"></div>
-        <div class="other-regions"></div>
+        <div class="row text-center mx-0">
+            <div class="buy col-12 col-md-4">
+                <h6>آگهی های خرید و فروش تهران</h6>
+                <div><a href="#" class="crm-link">خرید آپارتمان در تهران <span>( ۱۲۳ )</span> </a></div>
+                <div><a href="#" class="crm-link"> خرید آپارتمان در پونک <span>( ۲۳۴ )</span> </a></div>
+                <div><a href="#" class="crm-link">خرید آپارتمان در فرمانیه <span>( ۱۲۵۳ )</span> </a></div>
+                <div><a href="#" class="crm-link"> خرید آپارتمان در نیاوران <span>( ۱۲۳۴۱ )</span> </a></div>
+                <div><a href="#" class="crm-link">خرید آپارتمان در زعفرانیه <span>( ۵۵ )</span> </a></div>
+                <div><a href="#" class="crm-link">خرید آپارتمان در سعادت آباد <span>( ۲۱۴۳ )</span> </a></div>
+                <div><a href="#" class="crm-link">خرید آپارتمان در بلوار فردوس <span>( ۴۶۷ )</span> </a></div>
+                <div><a href="#" class="crm-link">خرید آپارتمان در قیطریه <span>( ۶۷۹۷ )</span> </a></div>
+                <div><a href="#" class="crm-link">خرید آپارتمان در پاسداران <span>( ۲۳۴۵ )</span> </a></div>
+                <div><a href="#" class="crm-link">خرید آپارتمان در شهرک غرب <span>( ۷۵۵۷ )</span> </a></div>
+                <div><a href="#" class="crm-link">خرید آپارتمان در جردن <span>( ۸۶۹ )</span> </a></div>
+            </div>
+            <div class="rent col-12 col-md-4">
+                <div class="buy">
+                    <h6>آگهی های خرید و فروش تهران</h6>
+                    <div><a href="#" class="crm-link">خرید آپارتمان در تهران <span>( ۱۲۳ )</span> </a></div>
+                    <div><a href="#" class="crm-link"> خرید آپارتمان در پونک <span>( ۲۳۴ )</span> </a></div>
+                    <div><a href="#" class="crm-link">خرید آپارتمان در فرمانیه <span>( ۱۲۵۳ )</span> </a></div>
+                    <div><a href="#" class="crm-link"> خرید آپارتمان در نیاوران <span>( ۱۲۳۴۱ )</span> </a></div>
+                    <div><a href="#" class="crm-link">خرید آپارتمان در زعفرانیه <span>( ۵۵ )</span> </a></div>
+                    <div><a href="#" class="crm-link">خرید آپارتمان در سعادت آباد <span>( ۲۱۴۳ )</span> </a></div>
+                    <div><a href="#" class="crm-link">خرید آپارتمان در بلوار فردوس <span>( ۴۶۷ )</span> </a></div>
+                    <div><a href="#" class="crm-link">خرید آپارتمان در قیطریه <span>( ۶۷۹۷ )</span> </a></div>
+                    <div><a href="#" class="crm-link">خرید آپارتمان در پاسداران <span>( ۲۳۴۵ )</span> </a></div>
+                    <div><a href="#" class="crm-link">خرید آپارتمان در شهرک غرب <span>( ۷۵۵۷ )</span> </a></div>
+                    <div><a href="#" class="crm-link">خرید آپارتمان در جردن <span>( ۸۶۹ )</span> </a></div>
+                </div></div>
+            <div class="other-regions col-12 col-md-4">
+                <div class="buy">
+                    <h6>آگهی های خرید و فروش تهران</h6>
+                    <div><a href="#" class="crm-link">خرید آپارتمان در تهران <span>( ۱۲۳ )</span> </a></div>
+                    <div><a href="#" class="crm-link"> خرید آپارتمان در پونک <span>( ۲۳۴ )</span> </a></div>
+                    <div><a href="#" class="crm-link">خرید آپارتمان در فرمانیه <span>( ۱۲۵۳ )</span> </a></div>
+                    <div><a href="#" class="crm-link"> خرید آپارتمان در نیاوران <span>( ۱۲۳۴۱ )</span> </a></div>
+                    <div><a href="#" class="crm-link">خرید آپارتمان در زعفرانیه <span>( ۵۵ )</span> </a></div>
+                    <div><a href="#" class="crm-link">خرید آپارتمان در سعادت آباد <span>( ۲۱۴۳ )</span> </a></div>
+                    <div><a href="#" class="crm-link">خرید آپارتمان در بلوار فردوس <span>( ۴۶۷ )</span> </a></div>
+                    <div><a href="#" class="crm-link">خرید آپارتمان در قیطریه <span>( ۶۷۹۷ )</span> </a></div>
+                    <div><a href="#" class="crm-link">خرید آپارتمان در پاسداران <span>( ۲۳۴۵ )</span> </a></div>
+                    <div><a href="#" class="crm-link">خرید آپارتمان در شهرک غرب <span>( ۷۵۵۷ )</span> </a></div>
+                    <div><a href="#" class="crm-link">خرید آپارتمان در جردن <span>( ۸۶۹ )</span> </a></div>
+                </div></div></div>
     </div>
 </section>

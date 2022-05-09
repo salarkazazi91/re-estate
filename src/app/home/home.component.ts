@@ -138,7 +138,10 @@ export class HomeComponent implements OnInit {
     scrollbar: { draggable: true },
     loop: true,
     loopFillGroupWithBlank: true,
-
+    autoplay: {
+      delay: 520,
+      disableOnInteraction: true
+    },
     breakpoints: {
       512: {
         spaceBetween: 25,
@@ -209,7 +212,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   removeTag(tag: string) {
     this.tags.splice(this.tags.indexOf(tag), 1);
@@ -220,12 +223,12 @@ export class HomeComponent implements OnInit {
   }
 
   carouselTransitionEnd([swiper]: any) {
-    let index = swiper.activeIndex - 1;
+    let index = swiper.realIndex;
     index = index >= this.agancies.length ? 0 : index;
     this.selectedAgancy = this.agancies[index];
 
     this.cdr.detectChanges();
     console.log(swiper);
-    console.log(swiper.activeIndex);
+    console.log(swiper.realIndex);
   }
 }
