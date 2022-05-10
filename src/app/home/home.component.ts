@@ -132,7 +132,7 @@ export class HomeComponent implements OnInit {
   config: SwiperOptions = {
     slidesPerView: 1,
     slidesPerGroup: 1,
-    spaceBetween: 50,
+    spaceBetween: 20,
     navigation: true,
     pagination: { clickable: true },
     scrollbar: { draggable: true },
@@ -151,7 +151,7 @@ export class HomeComponent implements OnInit {
         slidesPerView: 3,
       },
       1024: {
-        slidesPerView: 5,
+        slidesPerView: 7,
       },
     },
   };
