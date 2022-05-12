@@ -4,8 +4,8 @@
   background-color: $clr-light-gray;
   display: block;
 }
-footer{
-  &>*{
+footer {
+  & > * {
     margin-top: 2rem;
   }
 }
@@ -23,7 +23,6 @@ footer{
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: white;
   font-size: 1.25rem;
 }
 .icon-linkedin:before {
@@ -68,9 +67,6 @@ footer{
     margin-left: 1rem;
   }
 
-  .row > * {
-    padding: 1rem 0;
-  }
   .info > * {
     margin: 1rem 0;
   }
@@ -87,10 +83,10 @@ footer{
   }
 
   ul {
-    margin: 2rem 0;
+    margin: 1rem 0;
   }
   .social-link {
-    margin: .5rem;
+    margin: 0.5rem;
     width: 35px;
     height: 35px;
     border-radius: 5px;
@@ -102,17 +98,18 @@ footer{
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%,-50%);
+      color: white;
+      transform: translate(-50%, -50%);
     }
   }
 
-  .app{
+  .app {
     width: 200px;
     height: 100px;
   }
 }
-.description{
-  a{
+.description {
+  a {
     color: $clr-dark-gray;
     margin: 1rem;
   }
