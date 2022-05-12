@@ -1,27 +1,31 @@
-@import '../../styles/var';
+@import "../../styles/var";
 
 :host {
   background-color: $clr-light-gray;
-  display         : block;
+  display: block;
 }
-
+footer{
+  &>*{
+    margin-top: 2rem;
+  }
+}
 
 [class^="icon-"],
 [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family   : 'icomoon3' !important;
-  speak         : never;
-  font-style    : normal;
-  font-weight   : normal;
-  font-variant  : normal;
+  font-family: "icomoon3" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
   text-transform: none;
-  line-height   : 1;
-
+  line-height: 1;
   /* Better Font Rendering =========== */
-  -webkit-font-smoothing : antialiased;
+  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: white;
+  font-size: 1.25rem;
 }
-
 .icon-linkedin:before {
   content: "\e910";
 }
@@ -58,28 +62,58 @@
   content: "\e918";
 }
 
-
-
 .links {
-i{
-  margin-left: 1rem;
-}
-
-  .row>*{
-    padding: 2rem 0;
+  border-bottom: 1px solid #c6c2c2;
+  i {
+    margin-left: 1rem;
   }
-  .info>*{
+
+  .row > * {
+    padding: 1rem 0;
+  }
+  .info > * {
     margin: 1rem 0;
   }
   .logo {
-    width : 100%;
+    width: 100%;
     height: auto;
-    img{
+    img {
       width: 10%;
     }
   }
 
   .header {
     font-weight: bolder;
+  }
+
+  ul {
+    margin: 2rem 0;
+  }
+  .social-link {
+    margin: .5rem;
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+    background-color: $clr-dark-gray;
+    position: relative;
+    display: inline-block;
+    i {
+      margin-left: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
+  }
+
+  .app{
+    width: 200px;
+    height: 100px;
+  }
+}
+.description{
+  a{
+    color: $clr-dark-gray;
+    margin: 1rem;
   }
 }
