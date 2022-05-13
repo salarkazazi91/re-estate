@@ -1,18 +1,54 @@
 <!-- Modal -->
-<div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">فرم ورود</h5>
-                <button type="button" class="btn-close me-auto ms-0" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">بستن</button>
-                <button type="button" class="btn btn-primary">ورود</button>
-            </div>
-        </div>
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">فرم ورود</h5>
+        <button
+          type="button"
+          class="btn-close me-auto ms-0"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form
+          [formGroup]="formGroup"
+          (keydown)="submitOnEnter($event)"
+          (ngSubmit)="submit()"
+        >
+          <div>
+            <label for="username" class="form-label">نام کاربری : </label>
+            <input
+              class="form-control"
+              type="text"
+              id="username"
+            formControlName="username"
+            />
+          </div>
+          <div>
+            <label for="password" class="form-label">رمز عبور : </label>
+            <input
+              class="form-control"
+              type="password"
+              id="password"
+              formControlName="password"
+            />
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          بستن
+        </button>
+        <button type="submit" class="btn btn-primary" [disabled]="!formGroup.valid">ورود</button>
+      </div>
     </div>
+  </div>
 </div>
