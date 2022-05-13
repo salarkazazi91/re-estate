@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { SwiperModule } from "swiper/angular";
 import { FooterComponent } from './footer/footer.component';
+import { LoginComponent } from './account/login/login/login.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { FooterComponent } from './footer/footer.component';
     AppComponent,
     HomeComponent,
     NavigationComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent
   ],
   imports: [
     FormsModule,
