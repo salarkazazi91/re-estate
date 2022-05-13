@@ -1,4 +1,6 @@
 import {
+  AfterContentInit,
+  AfterViewInit,
   ChangeDetectorRef,
   Component,
   ElementRef,
@@ -11,17 +13,17 @@ import { timer } from 'rxjs';
 import { SwiperComponent } from 'swiper/angular';
 
 // import Swiper core and required modules
-import SwiperCore, { Pagination, Navigation, SwiperOptions } from 'swiper';
+import SwiperCore, { Pagination, Navigation, SwiperOptions, Autoplay } from 'swiper';
 
 // install Swiper modules
-SwiperCore.use([Pagination, Navigation]);
+SwiperCore.use([Pagination, Navigation,Autoplay]);
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterContentInit {
   // VARS
   leastMeter = '';
   mostMeter = '';
@@ -129,33 +131,7 @@ export class HomeComponent implements OnInit {
     'ساد',
   ];
   selectedAgancy = '';
-  config: SwiperOptions = {
-    slidesPerView: 1,
-    slidesPerGroup: 1,
-    spaceBetween: 20,
-    navigation: true,
-    pagination: { clickable: true },
-    scrollbar: { draggable: true },
-    loop: true,
-    loopFillGroupWithBlank: true,
-    autoplay: {
-      delay: 520,
-      disableOnInteraction: true
-    },
-    breakpoints: {
-      512: {
-        spaceBetween: 25,
-        slidesPerView: 1,
-      },
-      768: {
-        slidesPerView: 3,
-      },
-      1024: {
-        slidesPerView: 7,
-      },
-    },
-  };
-
+  config!: SwiperOptions;
   // FUNCTIONS
   doSomething() {
     const source = timer(10);
@@ -211,8 +187,35 @@ export class HomeComponent implements OnInit {
       }
     });
   }
-
-  ngOnInit(): void { }
+  ngAfterContentInit(): void {
+    this.config = {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      spaceBetween: 20,
+      navigation: true,
+      pagination: { clickable: true },
+      scrollbar: { draggable: true },
+      loop: true,
+      loopFillGroupWithBlank: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      breakpoints: {
+        512: {
+          spaceBetween: 25,
+          slidesPerView: 1,
+        },
+        768: {
+          slidesPerView: 4,
+        },
+        1024: {
+          slidesPerView: 7,
+        },
+      },
+    };
+  } 
+  ngOnInit(): void {}
 
   removeTag(tag: string) {
     this.tags.splice(this.tags.indexOf(tag), 1);
