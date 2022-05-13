@@ -199,7 +199,7 @@ export class HomeComponent implements OnInit, AfterContentInit {
       loopFillGroupWithBlank: true,
       autoplay: {
         delay: 3000,
-        disableOnInteraction: false,
+        disableOnInteraction: true,
       },
       breakpoints: {
         512: {
