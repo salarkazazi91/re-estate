@@ -1,49 +1,30 @@
 <section class="main">
-  <img
-    class="main-cover-img w-100 h-100"
-    alt="main"
-    src="../../assets/images/home-main-small.jpg"
-    srcset="
+  <img class="main-cover-img w-100 h-100" alt="main" src="../../assets/images/home-main-small.jpg" srcset="
       ../../assets/images/home-main-small.jpg  300w,
       ../../assets/images/home-main-medium.jpg 500w,
       ../../assets/images/home-main-large.jpg  700w,
       ../../assets/images/home-main-xxlg.jpg   900w
-    "
-  />
+    " />
   <div class="section-search-box container-xl py-5 mx-auto">
     <div class="row">
       <div class="col-lg-9 col-12 mx-auto">
         <div class="main-btns mt-3 text-center">
-          <button
-            class="fw-bold mx-2 rounded"
-            [ngClass]="{
+          <button class="fw-bold mx-2 rounded" [ngClass]="{
               'text-dark': mainBtn === 'buy',
               'bg-white': mainBtn === 'buy'
-            }"
-            (click)="mainBtn = 'buy'"
-          >
+            }" (click)="mainBtn = 'buy'">
             خرید
           </button>
-          <button
-            class="fw-bold mx-2 rounded"
-            (click)="mainBtn = 'rahn'"
-            [ngClass]="{
+          <button class="fw-bold mx-2 rounded" (click)="mainBtn = 'rahn'" [ngClass]="{
               'text-dark': mainBtn === 'rahn',
               'bg-white': mainBtn === 'rahn'
-            }"
-            href="#"
-          >
+            }" href="#">
             رهن
           </button>
-          <button
-            class="fw-bold mx-2 rounded"
-            (click)="mainBtn = 'rent'"
-            [ngClass]="{
+          <button class="fw-bold mx-2 rounded" (click)="mainBtn = 'rent'" [ngClass]="{
               'text-dark': mainBtn === 'rent',
               'bg-white': mainBtn === 'rent'
-            }"
-            href="#"
-          >
+            }" href="#">
             اجاره
           </button>
         </div>
@@ -51,25 +32,16 @@
           <div class="row">
             <div class="col-8 col-lg-10 ps-0">
               <div class="bg-white px-2 py-1 rounded border">
-                <label class="font-small d-block me-2"
-                  >استان، شهر یا محله</label
-                >
+                <label class="font-small d-block me-2">استان، شهر یا محله</label>
                 <div class="region-tags d-flex flex-wrap">
-                  <button
-                    class="add bg-white text-gray border-oval border border-dark"
-                  >
+                  <button class="add bg-white text-gray border-oval border border-dark">
                     افزودن +
                   </button>
-                  <div
-                    class="tags d-flex justify-content-between"
-                    *ngFor="let tag of tags"
-                  >
+                  <div class="tags d-flex justify-content-between" *ngFor="let tag of tags">
                     <span
                       class="tag bg-light-cyan text-dark font-small cursor-pointer border-oval border border-dark px-2 m-1"
-                      (click)="removeTag(tag)"
-                    >
-                      {{ tag }} x</span
-                    >
+                      (click)="removeTag(tag)">
+                      {{ tag }} x</span>
                   </div>
                 </div>
               </div>
@@ -79,87 +51,40 @@
                 جستجو
               </button>
             </div>
-            <div
-              class="col-12"
-              [ngClass]="
+            <div class="col-12" [ngClass]="
                 openSearchOptions ? 'open-more-options' : 'hide-more-options'
-              "
-            >
+              ">
               <div class="row">
                 <div class="search-item item-1 col-12 col-md-4 mt-2">
-                  <div
-                    class="item-header bg-white rounded-bottom p-1 rounded-end cursor-pointer font-small"
-                    (click)="searchContollClicked('melk')"
-                    #melkBtn
-                  >
+                  <div class="item-header bg-white rounded-bottom p-1 rounded-end cursor-pointer font-small"
+                    (click)="searchContollClicked('melk')" #melkBtn>
                     نوع ملک
                   </div>
-                  <div
-                    class="item-context grid-context bg-white border rounded"
-                    (click)="doSomething()"
-                    [ngClass]="{ hide: openSearchControl != 'melk' }"
-                    #melkElement
-                  >
-                    <input
-                      type="checkbox"
-                      name="apartment"
-                      id="apartment"
-                      [(ngModel)]="selectedStates.apartment"
-                    />
+                  <div class="item-context grid-context bg-white border rounded" (click)="doSomething()"
+                    [ngClass]="{ hide: openSearchControl != 'melk' }" #melkElement>
+                    <input type="checkbox" name="apartment" id="apartment" [(ngModel)]="selectedStates.apartment" />
                     <label class="context-tag" for="apartment">آپارتمان</label>
-                    <input
-                      [(ngModel)]="selectedStates.field"
-                      type="checkbox"
-                      name="field"
-                      id="field"
-                    />
+                    <input [(ngModel)]="selectedStates.field" type="checkbox" name="field" id="field" />
                     <label class="context-tag" for="field">ویلا و باغ</label>
-                    <input
-                      [(ngModel)]="selectedStates.land"
-                      type="checkbox"
-                      name="land"
-                      id="land"
-                    />
+                    <input [(ngModel)]="selectedStates.land" type="checkbox" name="land" id="land" />
                     <label class="context-tag" for="land">زمین و کلنگی</label>
-                    <input
-                      [(ngModel)]="selectedStates.organization"
-                      type="checkbox"
-                      name="organization"
-                      id="organization"
-                    />
+                    <input [(ngModel)]="selectedStates.organization" type="checkbox" name="organization"
+                      id="organization" />
                     <label class="context-tag" for="organization">اداری</label>
-                    <input
-                      [(ngModel)]="selectedStates.commercial"
-                      type="checkbox"
-                      name="commercial"
-                      id="commercial"
-                    />
+                    <input [(ngModel)]="selectedStates.commercial" type="checkbox" name="commercial" id="commercial" />
                     <label class="context-tag" for="commercial">تجاری</label>
-                    <input
-                      [(ngModel)]="selectedStates.mostaghelat"
-                      type="checkbox"
-                      name="mostaghelat"
-                      id="mostaghelat"
-                    />
+                    <input [(ngModel)]="selectedStates.mostaghelat" type="checkbox" name="mostaghelat"
+                      id="mostaghelat" />
                     <label class="context-tag" for="mostaghelat">مستغلات</label>
                   </div>
                 </div>
-                <div
-                  class="search-item item-2 col-6 col-md-4 ps-0 mt-2 search-item"
-                >
-                  <div
-                    class="item-header bg-white rounded-bottom cursor-pointer font-small p-1"
-                    (click)="searchContollClicked('meter')"
-                    #meterBtn
-                  >
+                <div class="search-item item-2 col-6 col-md-4 ps-0 mt-2 search-item">
+                  <div class="item-header bg-white rounded-bottom cursor-pointer font-small p-1"
+                    (click)="searchContollClicked('meter')" #meterBtn>
                     متراژ
                   </div>
-                  <div
-                    class="item-context bg-white border rounded"
-                    (click)="doSomething()"
-                    [ngClass]="{ hide: openSearchControl != 'meter' }"
-                    #meterElement
-                  >
+                  <div class="item-context bg-white border rounded" (click)="doSomething()"
+                    [ngClass]="{ hide: openSearchControl != 'meter' }" #meterElement>
                     <div class="meter-content row">
                       <div class="context-column col-6 p-0 text-center">
                         <h6>حداقل</h6>
@@ -196,36 +121,21 @@
                     </div>
                   </div>
                 </div>
-                <div
-                  class="search-item item-3 col-6 col-md-4 mt-2 pe-2 search-item"
-                >
-                  <div
-                    class="item-header bg-white rounded-bottom rounded-start cursor-pointer p-1 font-small"
-                    (click)="searchContollClicked('price')"
-                    #priceBtn
-                  >
+                <div class="search-item item-3 col-6 col-md-4 mt-2 pe-2 search-item">
+                  <div class="item-header bg-white rounded-bottom rounded-start cursor-pointer p-1 font-small"
+                    (click)="searchContollClicked('price')" #priceBtn>
                     قیمت
                   </div>
-                  <div
-                    class="item-context bg-white border rounded"
-                    (click)="doSomething()"
-                    [ngClass]="{ hide: openSearchControl != 'price' }"
-                    #priceElement
-                  >
+                  <div class="item-context bg-white border rounded" (click)="doSomething()"
+                    [ngClass]="{ hide: openSearchControl != 'price' }" #priceElement>
                     <div class="meter-content row">
                       <div class="context-column col-6 p-0 text-center">
                         <h6>حداقل</h6>
                         <input type="text" [(ngModel)]="leastPrice" />
-                        <button
-                          class="content-btn active"
-                          (click)="leastPrice = ''"
-                        >
+                        <button class="content-btn active" (click)="leastPrice = ''">
                           0
                         </button>
-                        <button
-                          class="content-btn"
-                          (click)="leastPrice = '۲۰۰ میلیون'"
-                        >
+                        <button class="content-btn" (click)="leastPrice = '۲۰۰ میلیون'">
                           ۲۰۰ میلیون
                         </button>
                         <button class="content-btn">۳۰۰ میلیون</button>
@@ -266,18 +176,10 @@
                 </div>
               </div>
             </div>
-            <div
-              class="col-12 mt-4"
-              [ngClass]="{ 'more-options-panel': !openSearchOptions }"
-            >
-              <a
-                class="more-options cursor-pointer text-white font-small mx-2"
-                (click)="openSearchOptions = !openSearchOptions"
-                >گزینه های بیشتر</a
-              >
-              <a class="more-options cursor-pointer text-primary font-small"
-                >پاک کردن</a
-              >
+            <div class="col-12 mt-4" [ngClass]="{ 'more-options-panel': !openSearchOptions }">
+              <a class="more-options cursor-pointer text-white font-small mx-2"
+                (click)="openSearchOptions = !openSearchOptions">گزینه های بیشتر</a>
+              <a class="more-options cursor-pointer text-primary font-small">پاک کردن</a>
             </div>
           </div>
         </div>
@@ -285,152 +187,83 @@
     </div>
   </div>
 </section>
-<section class="suggested-apartments">
-  <div class="header">
-    <h2 class="content">آپارتمان های پیشنهادی در تهران</h2>
-    <div class="bar"></div>
-  </div>
-  <div class="apt-cards p-5">
-    <div class="row">
-        <div class="col-12 col-md-9 col-lg-8">
-            <div class="row">
+<div class="container-xl">
 
-      <div
-      class="ctm-card border col-12 col-md-6 col-xxl-4"
-      *ngFor="let apartment of apartments"
-    >
-      <img [src]="apartment.image" alt="" class="image" />
-      <div class="details">
-        <h3 class="caption-title font-small text-primary">
-          {{ apartment.title }}
-        </h3>
-        <ul class="caption-content d-flex justify-content-start">
-          <li>
-            <span>
-              <i class="icon2-apartment"></i>
-              {{ apartment.type }}
-            </span>
-          </li>
-          <li>
-            <span>
-              <i class="icon2-measure"></i>
-              {{ apartment.size }}
-            </span>
-          </li>
-          <li>
-            <span>
-              <i class="icon2-room"></i>
-              {{ apartment.rooms }}
-            </span>
-          </li>
-          <li>
-            <span>
-              <i class="icon2-money"></i>
-              {{ apartment.price }}
-            </span>
-          </li>
-        </ul>
-      </div>
+  <section class="suggested-apartments">
+    <div class="header">
+      <h2 class="content">آپارتمان های پیشنهادی در تهران</h2>
+      <div class="bar"></div>
     </div>
+    <div class="apt-cards p-5">
+      <div class="row">
+        <div class="col-12 col-md-8 ">
+          <div class="row">
+
+            <div class="ctm-card border col-12 col-md-6" *ngFor="let apartment of apartments">
+              <img [src]="apartment.image" alt="" class="image" />
+              <div class="details">
+                <h3 class="caption-title font-small text-primary">
+                  {{ apartment.title }}
+                </h3>
+                <ul class="caption-content d-flex justify-content-start">
+                  <li>
+                    <span>
+                      <i class="icon2-apartment"></i>
+                      {{ apartment.type }}
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <i class="icon2-measure"></i>
+                      {{ apartment.size }}
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <i class="icon2-room"></i>
+                      {{ apartment.rooms }}
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <i class="icon2-money"></i>
+                      {{ apartment.price }}
+                    </span>
+                  </li>
+                </ul>
+              </div>
             </div>
+          </div>
         </div>
-        <div class="d-none d-md-block col-md-3 col-lg-4">salam</div>
-    </div>
-  </div>
-</section>
-
-<section class="ctm-agancy">
-  <div class="header">
-    <h2 class="content">آژانس های همکار</h2>
-    <div class="bar"></div>
-  </div>
-  <div class="ctm-carousel">
-    <swiper
-    
-      [config]="config"
-      class="mySwiper"
-      (transitionEnd)="carouselTransitionEnd($event)"
-    >
-      <ng-template
-        swiperSlide
-        *ngFor="let agancy of agancies; let index = index"
-      >
-        <div class="agancy-name">{{ agancy }}</div>
-        <div
-          class="ctm-carousel-card"
-          [ngStyle]="{ 'background-position': '0px ' + index * -129 + 'px' }"
-        ></div>
-      </ng-template>
-    </swiper>
-  </div>
-</section>
-<section class="apartment-links">
-  <div class="ads">
-    <div class="row text-center mx-0">
-      <div class="buy col-12 col-md-4">
-        <h6>آگهی های خرید و فروش تهران</h6>
-        <div>
-          <a href="#" class="crm-link"
-            >خرید آپارتمان در تهران <span>( ۱۲۳ )</span>
-          </a>
-        </div>
-        <div>
-          <a href="#" class="crm-link">
-            خرید آپارتمان در پونک <span>( ۲۳۴ )</span>
-          </a>
-        </div>
-        <div>
-          <a href="#" class="crm-link"
-            >خرید آپارتمان در فرمانیه <span>( ۱۲۵۳ )</span>
-          </a>
-        </div>
-        <div>
-          <a href="#" class="crm-link">
-            خرید آپارتمان در نیاوران <span>( ۱۲۳۴۱ )</span>
-          </a>
-        </div>
-        <div>
-          <a href="#" class="crm-link"
-            >خرید آپارتمان در زعفرانیه <span>( ۵۵ )</span>
-          </a>
-        </div>
-        <div>
-          <a href="#" class="crm-link"
-            >خرید آپارتمان در سعادت آباد <span>( ۲۱۴۳ )</span>
-          </a>
-        </div>
-        <div>
-          <a href="#" class="crm-link"
-            >خرید آپارتمان در بلوار فردوس <span>( ۴۶۷ )</span>
-          </a>
-        </div>
-        <div>
-          <a href="#" class="crm-link"
-            >خرید آپارتمان در قیطریه <span>( ۶۷۹۷ )</span>
-          </a>
-        </div>
-        <div>
-          <a href="#" class="crm-link"
-            >خرید آپارتمان در پاسداران <span>( ۲۳۴۵ )</span>
-          </a>
-        </div>
-        <div>
-          <a href="#" class="crm-link"
-            >خرید آپارتمان در شهرک غرب <span>( ۷۵۵۷ )</span>
-          </a>
-        </div>
-        <div>
-          <a href="#" class="crm-link"
-            >خرید آپارتمان در جردن <span>( ۸۶۹ )</span>
-          </a>
+        <div class="d-none d-md-block col-md-4 border">
+          <img src="../../assets/images/ad-1.jpg" alt="">
+          <img src="../../assets/images/ad-2.jpg" alt="">
         </div>
       </div>
-      <div class="rent col-12 col-md-4">
-        <div class="buy">
+    </div>
+  </section>
+
+  <section class="ctm-agancy">
+    <div class="header">
+      <h2 class="content">آژانس های همکار</h2>
+      <div class="bar"></div>
+    </div>
+    <div class="ctm-carousel">
+      <swiper [config]="config" class="mySwiper" (transitionEnd)="carouselTransitionEnd($event)">
+        <ng-template swiperSlide *ngFor="let agancy of agancies; let index = index">
+          <div class="agancy-name">{{ agancy }}</div>
+          <div class="ctm-carousel-card" [ngStyle]="{ 'background-position': '0px ' + index * -129 + 'px' }"></div>
+        </ng-template>
+      </swiper>
+    </div>
+  </section>
+  <section class="apartment-links">
+    <div class="ads">
+      <div class="row text-center mx-0">
+        <div class="buy col-12 col-md-4">
           <h6>آگهی های خرید و فروش تهران</h6>
           <div>
-            <a href="#" class="crm-link"
-              >خرید آپارتمان در تهران <span>( ۱۲۳ )</span>
+            <a href="#" class="crm-link">خرید آپارتمان در تهران <span>( ۱۲۳ )</span>
             </a>
           </div>
           <div>
@@ -439,8 +272,7 @@
             </a>
           </div>
           <div>
-            <a href="#" class="crm-link"
-              >خرید آپارتمان در فرمانیه <span>( ۱۲۵۳ )</span>
+            <a href="#" class="crm-link">خرید آپارتمان در فرمانیه <span>( ۱۲۵۳ )</span>
             </a>
           </div>
           <div>
@@ -449,102 +281,137 @@
             </a>
           </div>
           <div>
-            <a href="#" class="crm-link"
-              >خرید آپارتمان در زعفرانیه <span>( ۵۵ )</span>
+            <a href="#" class="crm-link">خرید آپارتمان در زعفرانیه <span>( ۵۵ )</span>
             </a>
           </div>
           <div>
-            <a href="#" class="crm-link"
-              >خرید آپارتمان در سعادت آباد <span>( ۲۱۴۳ )</span>
+            <a href="#" class="crm-link">خرید آپارتمان در سعادت آباد <span>( ۲۱۴۳ )</span>
             </a>
           </div>
           <div>
-            <a href="#" class="crm-link"
-              >خرید آپارتمان در بلوار فردوس <span>( ۴۶۷ )</span>
+            <a href="#" class="crm-link">خرید آپارتمان در بلوار فردوس <span>( ۴۶۷ )</span>
             </a>
           </div>
           <div>
-            <a href="#" class="crm-link"
-              >خرید آپارتمان در قیطریه <span>( ۶۷۹۷ )</span>
+            <a href="#" class="crm-link">خرید آپارتمان در قیطریه <span>( ۶۷۹۷ )</span>
             </a>
           </div>
           <div>
-            <a href="#" class="crm-link"
-              >خرید آپارتمان در پاسداران <span>( ۲۳۴۵ )</span>
+            <a href="#" class="crm-link">خرید آپارتمان در پاسداران <span>( ۲۳۴۵ )</span>
             </a>
           </div>
           <div>
-            <a href="#" class="crm-link"
-              >خرید آپارتمان در شهرک غرب <span>( ۷۵۵۷ )</span>
+            <a href="#" class="crm-link">خرید آپارتمان در شهرک غرب <span>( ۷۵۵۷ )</span>
             </a>
           </div>
           <div>
-            <a href="#" class="crm-link"
-              >خرید آپارتمان در جردن <span>( ۸۶۹ )</span>
+            <a href="#" class="crm-link">خرید آپارتمان در جردن <span>( ۸۶۹ )</span>
             </a>
           </div>
         </div>
-      </div>
-      <div class="other-regions col-12 col-md-4">
-        <div class="buy">
-          <h6>آگهی های خرید و فروش تهران</h6>
-          <div>
-            <a href="#" class="crm-link"
-              >خرید آپارتمان در تهران <span>( ۱۲۳ )</span>
-            </a>
+        <div class="rent col-12 col-md-4">
+          <div class="buy">
+            <h6>آگهی های خرید و فروش تهران</h6>
+            <div>
+              <a href="#" class="crm-link">خرید آپارتمان در تهران <span>( ۱۲۳ )</span>
+              </a>
+            </div>
+            <div>
+              <a href="#" class="crm-link">
+                خرید آپارتمان در پونک <span>( ۲۳۴ )</span>
+              </a>
+            </div>
+            <div>
+              <a href="#" class="crm-link">خرید آپارتمان در فرمانیه <span>( ۱۲۵۳ )</span>
+              </a>
+            </div>
+            <div>
+              <a href="#" class="crm-link">
+                خرید آپارتمان در نیاوران <span>( ۱۲۳۴۱ )</span>
+              </a>
+            </div>
+            <div>
+              <a href="#" class="crm-link">خرید آپارتمان در زعفرانیه <span>( ۵۵ )</span>
+              </a>
+            </div>
+            <div>
+              <a href="#" class="crm-link">خرید آپارتمان در سعادت آباد <span>( ۲۱۴۳ )</span>
+              </a>
+            </div>
+            <div>
+              <a href="#" class="crm-link">خرید آپارتمان در بلوار فردوس <span>( ۴۶۷ )</span>
+              </a>
+            </div>
+            <div>
+              <a href="#" class="crm-link">خرید آپارتمان در قیطریه <span>( ۶۷۹۷ )</span>
+              </a>
+            </div>
+            <div>
+              <a href="#" class="crm-link">خرید آپارتمان در پاسداران <span>( ۲۳۴۵ )</span>
+              </a>
+            </div>
+            <div>
+              <a href="#" class="crm-link">خرید آپارتمان در شهرک غرب <span>( ۷۵۵۷ )</span>
+              </a>
+            </div>
+            <div>
+              <a href="#" class="crm-link">خرید آپارتمان در جردن <span>( ۸۶۹ )</span>
+              </a>
+            </div>
           </div>
-          <div>
-            <a href="#" class="crm-link">
-              خرید آپارتمان در پونک <span>( ۲۳۴ )</span>
-            </a>
-          </div>
-          <div>
-            <a href="#" class="crm-link"
-              >خرید آپارتمان در فرمانیه <span>( ۱۲۵۳ )</span>
-            </a>
-          </div>
-          <div>
-            <a href="#" class="crm-link">
-              خرید آپارتمان در نیاوران <span>( ۱۲۳۴۱ )</span>
-            </a>
-          </div>
-          <div>
-            <a href="#" class="crm-link"
-              >خرید آپارتمان در زعفرانیه <span>( ۵۵ )</span>
-            </a>
-          </div>
-          <div>
-            <a href="#" class="crm-link"
-              >خرید آپارتمان در سعادت آباد <span>( ۲۱۴۳ )</span>
-            </a>
-          </div>
-          <div>
-            <a href="#" class="crm-link"
-              >خرید آپارتمان در بلوار فردوس <span>( ۴۶۷ )</span>
-            </a>
-          </div>
-          <div>
-            <a href="#" class="crm-link"
-              >خرید آپارتمان در قیطریه <span>( ۶۷۹۷ )</span>
-            </a>
-          </div>
-          <div>
-            <a href="#" class="crm-link"
-              >خرید آپارتمان در پاسداران <span>( ۲۳۴۵ )</span>
-            </a>
-          </div>
-          <div>
-            <a href="#" class="crm-link"
-              >خرید آپارتمان در شهرک غرب <span>( ۷۵۵۷ )</span>
-            </a>
-          </div>
-          <div>
-            <a href="#" class="crm-link"
-              >خرید آپارتمان در جردن <span>( ۸۶۹ )</span>
-            </a>
+        </div>
+        <div class="other-regions col-12 col-md-4">
+          <div class="buy">
+            <h6>آگهی های خرید و فروش تهران</h6>
+            <div>
+              <a href="#" class="crm-link">خرید آپارتمان در تهران <span>( ۱۲۳ )</span>
+              </a>
+            </div>
+            <div>
+              <a href="#" class="crm-link">
+                خرید آپارتمان در پونک <span>( ۲۳۴ )</span>
+              </a>
+            </div>
+            <div>
+              <a href="#" class="crm-link">خرید آپارتمان در فرمانیه <span>( ۱۲۵۳ )</span>
+              </a>
+            </div>
+            <div>
+              <a href="#" class="crm-link">
+                خرید آپارتمان در نیاوران <span>( ۱۲۳۴۱ )</span>
+              </a>
+            </div>
+            <div>
+              <a href="#" class="crm-link">خرید آپارتمان در زعفرانیه <span>( ۵۵ )</span>
+              </a>
+            </div>
+            <div>
+              <a href="#" class="crm-link">خرید آپارتمان در سعادت آباد <span>( ۲۱۴۳ )</span>
+              </a>
+            </div>
+            <div>
+              <a href="#" class="crm-link">خرید آپارتمان در بلوار فردوس <span>( ۴۶۷ )</span>
+              </a>
+            </div>
+            <div>
+              <a href="#" class="crm-link">خرید آپارتمان در قیطریه <span>( ۶۷۹۷ )</span>
+              </a>
+            </div>
+            <div>
+              <a href="#" class="crm-link">خرید آپارتمان در پاسداران <span>( ۲۳۴۵ )</span>
+              </a>
+            </div>
+            <div>
+              <a href="#" class="crm-link">خرید آپارتمان در شهرک غرب <span>( ۷۵۵۷ )</span>
+              </a>
+            </div>
+            <div>
+              <a href="#" class="crm-link">خرید آپارتمان در جردن <span>( ۸۶۹ )</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+</div>

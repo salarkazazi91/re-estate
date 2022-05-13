@@ -42,6 +42,7 @@
 
 section.main {
   position: relative;
+  z-index: 3;
 
   .main-cover-img {
     position  : absolute;
