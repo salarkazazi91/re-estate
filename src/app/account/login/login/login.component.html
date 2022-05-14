@@ -29,8 +29,14 @@
               class="form-control"
               type="text"
               id="username"
-            formControlName="username"
+              formControlName="username"
             />
+
+            <span
+              *ngIf="username.touched && username?.errors?.['required']"
+              class="form-text text-danger"
+              >لطفا نام کاربری را وارد نمایید</span
+            >
           </div>
           <div>
             <label for="password" class="form-label">رمز عبور : </label>
@@ -40,6 +46,16 @@
               id="password"
               formControlName="password"
             />
+            <span
+              class="form-text text-danger d-block"
+              *ngIf="password.touched && password?.errors?.['required']"
+              >لطفا رمز عبور را وارد نمایید</span
+            >
+            <span
+              class="form-text text-danger d-block"
+              *ngIf="password.touched && password?.errors && password?.errors?.['minlength']?.actualLength<6"
+              >لطفا حداقل ۶ کاراکتر وارد نمایید</span
+            >
           </div>
         </form>
       </div>
@@ -47,7 +63,14 @@
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
           بستن
         </button>
-        <button type="submit" class="btn btn-primary" [disabled]="!formGroup.valid">ورود</button>
+        <button
+          type="submit"
+          class="btn btn-primary"
+          [disabled]="!formGroup.valid"
+          (click)="submit()" 
+        >
+          ورود
+        </button>
       </div>
     </div>
   </div>

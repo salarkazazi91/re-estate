@@ -1,2 +1,4 @@
-:host{ 
+input.ng-pristine.ng-touched.ng-invalid,
+input.ng-dirty.ng-touched.ng-invalid{
+    border: 1px solid red;
 }

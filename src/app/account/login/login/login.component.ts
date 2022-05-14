@@ -8,10 +8,14 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   // VARS
-
+  username = new FormControl('', Validators.required);
+  password = new FormControl('', [
+    Validators.required,
+    Validators.minLength(6),
+  ]);
   formGroup = new FormGroup({
-    username: new FormControl('', Validators.required),
-    password: new FormControl('', [Validators.required, Validators.minLength(6)]),
+    username: this.username,
+    password: this.password,
   });
 
   // METHODS
@@ -25,6 +29,7 @@ export class LoginComponent implements OnInit {
   }
 
   submit() {
+    if (!this.formGroup.valid) return;
     console.log(this.formGroup);
   }
 }
